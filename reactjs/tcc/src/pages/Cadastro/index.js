@@ -29,7 +29,7 @@
     const [Email, setEmail] = useState('');
     const [Celular, setCelular] = useState('');
     const [Senha, setSenha] = useState('');
-    const [Confirmar, setConfirmar] = useState(0);
+    const [Confirmar] = useState(0);
     const loading = useRef();
 
 

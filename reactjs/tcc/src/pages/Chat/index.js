@@ -26,10 +26,10 @@ export default function Chat () {
    
  
   const inserir = async() => {
-   const Mensagem = await api.inserirMensagem(mensagem);
-   console.log(Mensagem); 
-   toast.dark('mensagem enviada com sucesso!!!');
- 
+   const mensagem = await api.inserirMensagem(mensagem);
+   
+   return toast.dark('mensagem enviada com sucesso!!!')
+  
  }
  
  

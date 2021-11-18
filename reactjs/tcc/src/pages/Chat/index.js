@@ -138,20 +138,24 @@ export default function Chat () {
           
           
 
-         
-
           <div class="comentario">
+            
+          </div>
+           
+        </div>
+
+        
+        <div class="depoimentos">
             <div class="meu_perfil">
                 <img src="/assets/imagens/pg-chat-perfil.png" alt=""/>
             </div>
-
             <div clss="digitar">
               <input type="text" name="" placeholder="Faça um comentário" value={mensagem} onChange={e => SetMeg(e.target.value) }  />
             </div>
+
             <div class="publicar">
               <button   onClick= {inserir}  className="btn-enviar"> Publicar</button>
             </div>
-          </div>
         </div>
       </div>
     </Container>

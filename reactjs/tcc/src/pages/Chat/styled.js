@@ -266,8 +266,24 @@ input {
   width:50em;
   border-right:1em;
   border-color:transparent;
+  margin-left: 5px;
   
 }
+
+.depoimentos {
+  display: flex;
+  flex-direction: row;
+  margin-left: 8em;
+  margin-top: -2em;
+}
+
+button {
+  color: #207BE5;
+  margin-left: 5px;
+}
+
+@media (max-width: 1024px) {
+    .cabecalho-inicio, .
 `;
 
 export {Container}  

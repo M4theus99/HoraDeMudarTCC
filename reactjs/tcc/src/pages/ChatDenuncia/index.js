@@ -125,6 +125,7 @@ const remover = async () => {
                  
                  </div>
                  <div className="chatt">
+                 
                     {conversa.map(x =>
                         <div key={x.id_HDM_chat_denuncias}>
                             <div className="chat-message">
@@ -135,7 +136,9 @@ const remover = async () => {
                         </div>
                     )}
                     </div>
-                 <div class="mensagem">
+                    
+      </div>  
+      <div class="mensagem">
 
     
        <ChatTextArea name="" placeholder="Escreva..." value={mensagem} onChange={e => setMsg(e.target.value)} />
@@ -143,8 +146,7 @@ const remover = async () => {
        <ChatButton onClick={remover} className="btn-enviar">  Apagar Historico </ChatButton>
 
     
-</div>    
-      </div>  
+</div> 
       
   
  

@@ -44,7 +44,7 @@ const ChatTextArea = styled.textarea`
     height: 7em;
     width: 55em;
     
-    margin: .5em 0em;
+    margin: .5em 3em;
 `
 
 export { ChatButton, ChatInput, ChatTextArea }

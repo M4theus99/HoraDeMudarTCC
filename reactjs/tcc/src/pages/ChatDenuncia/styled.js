@@ -88,7 +88,7 @@ const Container = styled.div`
     background: #B2BBC2;
     width: 90%;
     height: 40em;
-    border-radius: 25px;
+    border-radius: 25px 25px 0px 0px;
     margin-left:6em;
     overflow-y: auto;
 }
@@ -308,9 +308,12 @@ const Container = styled.div`
     flex-direction: row;
     align-items: center;
     font-size: .9em;
-    margin: .4em .2em;
-    margin-top: 7em;
-    margin-left: 2em;
+    margin: .0em 1.5em;
+    margin-left: 6.7em;
+    background-color: #B2BBC2;
+    border-radius: 0px;
+    width: 90%;
+   
 }
 
 @media (max-width: 1024px) {

@@ -66,20 +66,18 @@ export default class Api {
 
 
     
-    async inserirMensagem(  nomeUsuario, mensagem) {
+    async inserirMensagem(mensagem) {
         let chat = {
             
-            usuario: { 
-                nome: nomeUsuario
-            },
+
             mensagem: mensagem
         }
         let r = await api.post(`/Chat`, chat);
         return r.data;
     }
 
-    async listarMensagensChat(idSala) { 
-        let r = await api.get(`/Chat/${idSala}`);
+    async listarMensagensChat() { 
+        let r = await api.get(`/Chat`);
         return r.data;
     }
 

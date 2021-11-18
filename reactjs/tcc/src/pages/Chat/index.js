@@ -24,11 +24,26 @@ export default function Chat () {
   const [chat, SetChat] = useState([]);
   const [mensagem, SetMeg] = useState('')
    
+
+
+  const validarResposta = (resp) => {
+    //console.log(resp);
+
+    if (!resp.erro)
+        return true;
+    alert("erro")
+
+    return false;
+}
  
   const inserir = async() => {
-   const mensagem = await api.inserirMensagem(mensagem);
-   
-   return toast.dark('mensagem enviada com sucesso!!!')
+   const resp = await api.inserirMensagem(mensagem);
+  
+    if (!validarResposta(resp)) 
+    
+    return;
+    toast.dark('Mensagem Enviada!');
+    
   
  }
  

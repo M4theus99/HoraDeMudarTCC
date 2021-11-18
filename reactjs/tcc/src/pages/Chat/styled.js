@@ -122,7 +122,29 @@ const Container = styled.div`
   margin-right: 5em;
   margin-left: 5em;
   border-radius: 25px;
+  overflow-y: auto;
 }
+
+.chat1::-webkit-scrollbar-track
+    {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        background-color: #fff;
+    }
+
+    .chat1::-webkit-scrollbar
+    {
+        width: 7px;
+        background-color: #3E006F;
+        border-radius: 10px;
+    }
+
+    .chat1::-webkit-scrollbar-thumb
+    {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        background-color: #CBCBCB;
+    }
 
 .faixa3 {
   display: flex;

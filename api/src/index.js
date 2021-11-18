@@ -326,18 +326,11 @@ function getRandomInteger(min, max){
 app.post('/Chat', async (req, resp) => {
     try {
         let chat = req.body;
-
-        let usu = await db.infob_hdm_usuario.findOne({ where: { nm_HDM_usuario: chat.usuario.nome } })
     
-        if (usu == null)
-            return resp.send({ erro: 'Usuário não existe!' });
-        
         if (!chat.mensagem || chat.mensagem.replace(/\n/g, '') == '')
             return resp.send({ erro: 'Mensagem é obrigatória!' });
-        
-        
+
         let mensagem = {
-            id_HDM_usuario: usu.id_usuario,
             ds_HDM_mensagem: chat.mensagem,
             dt_HDM_data: new Date()
         }
@@ -354,22 +347,15 @@ app.post('/Chat', async (req, resp) => {
 });
 
 
-app.get('/Chat/:idSala', async(req, resp) => {
-    try {
-        let chat = await db.infob_hdm_chat.findAll({
-            where :
-            {
-                id_HDM_sala: req.params.idSala
-            }
-        });
-
-        resp.send(chat); 
-
-    } catch (e) {
+        app.get('/Chat', async(req, resp) =>{
+try{
+        let chat = await db.infob_hdm_chat.findAll()
+        resp.send(chat)
+    } catch (e){
         resp.send(e.toString());
- 
-    }
-})
+    
+        }
+    });
 
 
 

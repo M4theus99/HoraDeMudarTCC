@@ -134,7 +134,7 @@ a{
 
 .autoestima{
     height: 100vh;
-    background-color: ;
+    background-color: #DCDCDC	;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -600,9 +600,6 @@ a{
         width: 100%;
     }
 
-    .faixa3-image{
-        
-    }
 
     .img-faixa3{
         width: 15em;

@@ -41,7 +41,7 @@ export default function Routes() {
                   <Route path="/RedefinirSenha" exact={true} component={RedefinirSenha}/>
                   <Route path="/Denúncia" exact={true} component={Denúncia}/>
                   <Route path="/TipoAssedio" exact={true} component={TipoAssedio}/>  
-                  <Route path="/QuemSomoNos" exact={true} component={QuemSomosNos}/> 
+                  <Route path="/QuemSomosNos" exact={true} component={QuemSomosNos}/> 
                {/*
                 <Route path="/CaracteristicasLocalizaçao" exact={true} component={CaracteristicasLocalizaçao}/>
     

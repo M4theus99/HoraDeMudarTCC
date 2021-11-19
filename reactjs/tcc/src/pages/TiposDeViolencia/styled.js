@@ -67,7 +67,7 @@ a{
     margin-top: 2em;
     margin-right: 6em; 
     margin-left: 6em;
-   
+    width: 39em;
 }
 
 .cabecalho-botoes a {
@@ -106,10 +106,14 @@ a{
 .texto1-faixa2{
     text-align: center;
     color: #298DAB;
-    font-size: 4em;
+    font-size: 3em;
     font-family: Roboto-medium;
     width: 4em;
-    padding-left: 5em;
+    padding-left: 10em;
+}
+
+.img-faixa2{
+    padding-left: em;
 }
 
 .texto2-faixa2{
@@ -120,10 +124,11 @@ a{
     font-family: Roboto-medium;
     margin-left: 8em;
     margin-right: 8em; 
- 
-   
-  
+    width: 39em; 
+}
 
+.conteudo-faixa2{
+    justify-content: center;
 }
 
 .faixa3{
@@ -140,7 +145,7 @@ a{
     color: #5164C3;
     font-size: 3em;
     font-family: Roboto-medium;
- 
+  
 }
 
 .faixa3-texto2{
@@ -148,15 +153,18 @@ a{
     padding-top: 2em;
     text-align: center;
     font-family: Roboto-medium;
-    font-size: 1em;
+    font-size: 1.3em;
     margin-left: 11em;
     margin-right: 11em; 
+    width: 39em;
 }
 
 .img-faixa3{
     height: 28em;
     width: 28em;
 }
+
+
 
 .faixa4{
     background-color: #EFF1F5;
@@ -184,9 +192,10 @@ a{
     padding-top: 2em;
     text-align: center;
     font-family: Roboto-medium;
-    font-size: 1em;
+    font-size: 1.3em;
      margin-left: 9em;
     margin-right: 9em; 
+    width: 39em;
 }
 
 
@@ -215,9 +224,10 @@ a{
     padding-top: 1em;
     text-align: center;
     font-family: Roboto-medium;
-    font-size: 1.5em;
+    font-size: 1.3em;
     margin-left: 6em;
     margin-right: 6em; 
+    width: 39em;
 }
 
 .img-faixa5{
@@ -253,9 +263,10 @@ a{
     color: #0B0A0A;
     text-align: center;
     font-family: Roboto-medium;
-    font-size: 1em;
+    font-size: 1.3em;
     margin-left: 8em;
     margin-right: 8em; 
+    width: 39em;
 }
 
 .faixa7{
@@ -337,7 +348,40 @@ a{
 }
 
 
+@media (max-width: 1024px) {
+   
+    .cabecalho-inicio, .cabecalho-botoes, .conteudo-faixa1, .faixa1-img {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+       
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+    }
 
+    .faixa1-titulo{
+        padding-top: 2em;;
+    }
+
+    .faixa1-txt{
+        padding-top: 2em;
+        width: 30em;
+    }
+
+    .faixa-baixo{
+        padding-top: 2em;
+    }
+
+    .cabecalho-botoes{
+        padding-top: 2em;
+    }
+
+    .img-tpdeviolencia{
+        display: none;    }
+
+}
 
 
 

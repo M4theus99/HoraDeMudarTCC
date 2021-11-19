@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom'
 import {Container} from './styled';
 
@@ -8,7 +9,6 @@ export default function Características ()
 
         <Container>
 
-        
             <div class="cabecalho-inicio">
 
             <div class="cabecalho-img">
@@ -23,7 +23,7 @@ export default function Características ()
                 
                 <Link to="/Denuncie">Denúncie</Link>
                 <Link to="/TipoViolencia">Tipos de violência</Link>
-                <Link to=" ">Tipos de assédio</Link>
+                <Link to="/TipoAssedio">Tipos de assédio</Link>
                 <Link to="/MapaDelegacias">Mapa das Delegacia</Link>
                 <Link to="/AutoEstima">Autoestima</Link>
                 <Link to="/Chat">Chat</Link>
@@ -35,9 +35,8 @@ export default function Características ()
 
             </div>
 
-            <div class="container">
-                <div class="faixa1">
-                    <h1> Características</h1>
-                </div>
-                </div>
-                </Container>
+            
+        </Container>
+        
+    )
+} 

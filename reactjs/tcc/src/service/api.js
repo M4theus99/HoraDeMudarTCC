@@ -43,8 +43,12 @@ export default class Api {
         return r.data;
     }
 
-  
-       
+  //Chat
+    async removerMensagem(id) {
+        let r = await api.delete(`/chat/${id}`)
+        return r.data
+    }
+
 
 
     // API CHAT DENUNCIA

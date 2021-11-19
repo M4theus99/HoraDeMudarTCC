@@ -118,10 +118,10 @@ const Container = styled.div`
 
 .chat1 {
   background: #f3d7fd;
-  margin: 3em;
+  margin-top: 3em;
   margin-right: 5em;
   margin-left: 5em;
-  border-radius: 25px;
+  border-radius: 25px 25px 0px 0px;
   overflow-y: auto;
 }
 
@@ -273,8 +273,14 @@ input {
 .depoimentos {
   display: flex;
   flex-direction: row;
+  background:  #f3d7fd;
+  margin-right: 5em;
+  margin-left: 5em;
+  border-radius: 0px 0px 25px 25px;
+}
+
+.meu_perfil {
   margin-left: 8em;
-  margin-top: -2em;
 }
 
 button {
@@ -282,8 +288,6 @@ button {
   margin-left: 5px;
 }
 
-@media (max-width: 1024px) {
-    .cabecalho-inicio, .
 `;
 
 export {Container}  

@@ -297,7 +297,7 @@ const Container = styled.div`
     border-radius: 30px;
     width: 300px;
     height: auto;
-    color: #black;
+    color: #000000;
     padding: 15px;
     position: relative;
     margin-top: 1em;

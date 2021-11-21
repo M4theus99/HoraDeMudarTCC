@@ -2,7 +2,7 @@
 import "animate.css/animate.min.css";
 import { Link } from 'react-router-dom'
 import {Container} from './styled';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { confirmAlert } from 'react-confirm-alert'
@@ -97,7 +97,7 @@ export default function AutorizaçaoMensagem ( props ) {
                 <div className="chatt">
                  {chat.map((x, i) =>
                      <div key={x.id_HDM_chat}>
-                           <tr classname={i % 2 == 0 ? "linha-alternada" : ""}>
+                           <tr classname={i % 2 === 0 ? "linha-alternada" : ""}>
                                     <td>
                                     {" "}
                                     </td>

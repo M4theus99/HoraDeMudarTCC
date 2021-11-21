@@ -213,7 +213,7 @@ body {
 
    
 
-    .conteudo2, .mulher, .textos, .text, .text2, .text3, .text4, .btn2 {
+    .conteudo2, .mulher, .textos, .text, .text2, .text3, .text4, .btn2, .mapa{
     flex-direction: column;
         justify-content: center;
         align-items: center;

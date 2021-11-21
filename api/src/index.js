@@ -394,7 +394,7 @@ try{
         }
     });
 
-    app.delete('/chatdenu', async (req, resp) => {
+    app.delete('/chatdenu/', async (req, resp) => {
         try{
             let r = await db.infob_hdm_chat_denuncias.destroy({ truncate: true })
 

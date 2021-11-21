@@ -1,26 +1,53 @@
 
 import "animate.css/animate.min.css";
 import { Link } from 'react-router-dom'
-import {Container} from './styled'
+import {Container} from './styled';
 import { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { confirmAlert } from 'react-confirm-alert'
+import 'react-confirm-alert/src/react-confirm-alert.css';
 import Api from '../../service/api';
 const api = new Api();
 
 
-export default function AutorizaçaoMensagem () {
+export default function AutorizaçaoMensagem ( props ) {
 
     const [chat, SetChat] = useState([]);
-  const [mensagem, SetMeg] = useState('')
 
 
-  const remover = async () => {
-    const r = await api.removerMensagem();
+    const validarResposta = (resp) => {
+        
+        if (!resp.erro)
+            return true;
+        alert("erro")
     
+        return false;
+    }
 
-        alert('Mensagem removida!');
-    
-}
-  
+        const remover = async (id) => {
+
+            confirmAlert({
+                title: 'Remover Mensagem?',
+                message: `Tem certeza que deseja excluir a mensagem?`, 
+                buttons:[
+                    {
+                        label: 'Sim',
+                        onClick: async () =>{
+                        const r = await api.removerMensagem(id);
+                        if (!validarResposta(r)) 
+                        return;
+                        toast.dark('Mensagem removida!');
+                        }
+                        },
+                        {
+                            label: 'Não'
+                        }
+                    ]
+                })
+            }
+
+
     const ListaMensagem = async ()=> {
       const ListarMensagem = await api.listarMensagensChat(1);
       SetChat(ListarMensagem);
@@ -32,7 +59,7 @@ export default function AutorizaçaoMensagem () {
     return(
 
         <Container>
-
+ <ToastContainer />
             <div class="site">
 
                 <div class="cabecalho-inicio">
@@ -42,14 +69,15 @@ export default function AutorizaçaoMensagem () {
                     </div>
 
                     <div class="cabecalho-botoes">
-                        
-                        <Link to="/Denúncia">Denúncia</Link>
-                        <Link to="/TipoViolencia">Tipos de violência</Link>
-                        <Link to=" ">Tipos de assédio</Link>
-                        <Link to=" ">Mapa das Delegacia</Link>
-                        <Link to="/AutoeEstima">Autoestima</Link>
-                        <Link to="/Chat">Chat</Link>
-                        <Link to=" ">Cadastro</Link>
+                    <Link to="/">Inicio</Link>
+                <Link to="/TipoViolencia">Tipos de violência</Link>
+                <Link to="/TiposDeAssedio">Tipos de assédio</Link>
+                <Link to="/MapaDelegacias">Mapa das Delegacia</Link>
+                <Link to="/AutoEstima">Autoestima</Link>
+                <Link to="/Denúncia">Denúncia</Link>
+                <Link to="/Cadastro">Cadastro</Link>
+                <Link to="/Login">Login</Link>
+                                                  
                                                     
                     </div>
 
@@ -78,8 +106,12 @@ export default function AutorizaçaoMensagem () {
                             
                              <div> <b>Mensagem</b>: {x.ds_HDM_mensagem} </div>
                            
-                             <td className="coluna-acao"> <button onClick= {remover}> <img src="/assets/imagens/icons8-trash.svg" alt="" /> </button> </td> 
+    
                          </div>
+                         <div className="lixeira">
+                             <img onClick={() => remover (x.id_HDM_chat)} src="/assets/imagens/pg-chat-lixeira.png" alt="" style={{cursor: 'pointer', width: '25px', height:'25px'}}/>
+                         </div>
+
                          
                      </tr>
                      </div>

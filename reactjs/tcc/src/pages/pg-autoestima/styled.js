@@ -236,6 +236,38 @@ a{
   
 }
 
+@media (max-width: 1024px) {
+
+  .conteudo{
+    flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+       
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+    
+  }
+
+  .faixa2{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+   
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+  }
+
+  .faixa2-img img{
+    height: 9em;
+    whidth: 9em;
+  }
+
+}
+   
+
 `;
  export {Container}
 

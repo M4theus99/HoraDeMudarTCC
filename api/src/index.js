@@ -13,7 +13,7 @@ app.post('/cadastro', async (req, resp) => {
     try {
         let usuParam = req.body;
 
-        let u = await db.infob_hdm_cadastro.findOne({ where: { nm_HDM_email: usuParam.email } });
+        let u = await db.infob_hdm_usuario.findOne({ where: { nm_HDM_email: usuParam.email } });
         if (u != null)
             return resp.send({ erro: 'Usuário já existe!' });
 
@@ -38,7 +38,7 @@ app.post('/cadastro', async (req, resp) => {
 
 
 
-        let r = await db.infob_hdm_cadastro.create({
+        let r = await db.infob_hdm_usuario.create({
             nm_HDM_nome: usuParam.nome,
             nm_HDM_sobrenome: usuParam.sobrenome,
             nr_HDM_celular: usuParam.celular,
@@ -55,7 +55,7 @@ app.post('/cadastro', async (req, resp) => {
 
 app.get('/cadastro', async (req, resp) => {
     try {
-        let usuarios = await db.infob_hdm_cadastro.findAll();
+        let usuarios = await db.infob_hdm_usuario.findAll();
         resp.send(usuarios);
     } catch (e) {
         resp.send({ erro: e.toString() })
@@ -179,10 +179,10 @@ app.post('/cadastro_adm', async (req, resp) => {
     }
 })
 
-app.post('/esqueciASenha', async(req, resp) => {
-    const user = await db.infob_hdm_cadastro.findOne({
+app.post('/EsqueceuSenha', async(req, resp) => {
+    const user = await db.infob_hdm_usuario.findOne({
         where: {
-            ds_email: req.body.email
+            nm_HDM_email: req.body.email
         }
     });
 
@@ -190,11 +190,11 @@ app.post('/esqueciASenha', async(req, resp) => {
         return resp.send({ erro: 'E-mail Inválido'});
     }
     let code = getRandomIntereger(1000, 9999);
-    await db.infob_hdm_cadastro.update({
-        ds_codigo_rec: code
+    await db.infob_hdm_usuario.update({
+        ds_codigo: code
 
     }, {
-        where: {id_HDM_cadastro: user.id_HDM_cadastro}
+        where: {id_HDM_usuario: user.id_HDM_usuario}
     })
     enviarEmail(user.nm_HDM_email, 'Recuperação de E-mail', `
         <h3> Recuperação de Senha </h3>
@@ -214,7 +214,7 @@ function getRandomIntereger(min, max){
 
 
 app.post('/validarCodigo', async (req, resp) => {
-    const user = await db.infob_hdm_cadastro.findOne({
+    const user = await db.infob_hdm_usuario.findOne({
         where: {
             nm_HDM_email: req.body.email
         }
@@ -231,8 +231,8 @@ app.post('/validarCodigo', async (req, resp) => {
 
 
 
-app.put('/resetSenha', async (req, resp) => {
-    const user = await db.infob_hdm_cadastro.findOne({
+app.put('/RedefinirSenha', async (req, resp) => {
+    const user = await db.infob_hdm_usuario.findOne({
         where: {
             nm_HDM_email: req.body.email
         }
@@ -241,8 +241,8 @@ app.put('/resetSenha', async (req, resp) => {
         resp.send( {status: 'erro', mensagem: 'Email Inválido'});
     }
 
-    let r = await db.infoa_dtn_tb_cliente.update({
-        nm_HDM_senha: req.body.novaSenha}, {where: {id_HDM_cadastro: user.id_HDM_cadastro}} )
+    let r = await db.infob_hdm_usuario.update({
+        ds_HDM_senha: req.body.novaSenha}, {where: {id_HDM_usuario: user.id_HDM_usuario}} )
         
     resp.send({ status: 'ok', mensagem: 'A senha foi alterada'})
     
@@ -272,31 +272,31 @@ app.get('/cadastro_adm', async (req, resp) => {
 
 
 
-app.post('/esqueciASenha', async (req, resp) =>{
-    const usuarios = await db.infob_hdm_usuario.findOne({
-        where:{
-            nm_HDM_email: req.body.email
-        }
-    });
+// app.post('/esqueciASenha', async (req, resp) =>{
+//     const usuarios = await db.infob_hdm_usuario.findOne({
+//         where:{
+//             nm_HDM_email: req.body.email
+//         }
+//     });
 
-    if (!usuarios) {
-            resp.send({status: 'Erro', mensagem: 'E-mail inválido.'});
-        }
+//     if (!usuarios) {
+//             resp.send({status: 'Erro', mensagem: 'E-mail inválido.'});
+//         }
     
-        let codigo = getRandomInteger (1000, 9999);
-        await db.infob_hdm_usuario.update({
-            ds_HDM_cogidoRec: codigo
-         }, {
-             where: {id_HDM_usuario: usuarios.id_HDM_usuario}
-         })
-            enviarEmail(usuarios.nm_HDM_email, 'Recuperação De Senha', `
-            <h3> Recuperação de senha </h3>
-            <p> Sua recuperação de senha da sua conta foi atendida. </p> 
-            <p> insira esse código ${codigo} para recuper sua conta
+//         let codigo = getRandomInteger (1000, 9999);
+//         await db.infob_hdm_usuario.update({
+//             ds_codigo: codigo
+//          }, {
+//              where: {id_HDM_usuario: usuarios.id_HDM_usuario}
+//          })
+//             enviarEmail(usuarios.nm_HDM_email, 'Recuperação De Senha', `
+//             <h3> Recuperação de senha </h3>
+//             <p> Sua recuperação de senha da sua conta foi atendida. </p> 
+//             <p> insira esse código ${codigo} para recuper sua conta
             
-            `) 
-            resp.send({ status: 'Código Enviado'});
-        })
+//             `) 
+//             resp.send({ status: 'Código Enviado'});
+//         })
 
 
 

@@ -1,15 +1,56 @@
 import { Link } from 'react-router-dom'
 import {Container} from './styled';
 
+import axios from "axios";
+import { useState } from "react";
+import { useHistory } from "react-router";
 
-export default function RedefinirSenha () 
-{
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import LoadingBar from 'react-top-loading-bar'; 
+
+
+export default function RedefinirSenha (props) 
 {
+  const [validado, setValidado] = useState(false);
+  const [codigo, setCodigo] = useState('');
+  const [novaSenha, setNovaSenha] = useState('');
+
+    const navigation = useHistory()
+  
+  async function validarCodigo(){
+      const r = await axios.post(`http://localhost:3030/validarCodigo`, 
+      {email: props.location.state.email, 
+       codigo: codigo})
+      if  (r.data.status === 'ok') {
+          setValidado(true);
+      } else {
+          toast.error(r.data.mensagem);
+      }
+
+  }
+  
+  async function alterarSenha (){
+    const r = await axios.put(`http://localhost:3030/RedefinirSenha`, 
+        {email: props.location.state.email, 
+        codigo: codigo, 
+        novaSenha: novaSenha})
+
+    if (r.data.status === 'ok') {
+        toast.dark('senha alterada');
+        navigation.push('/Login')
+    } else {
+        toast.error('E-mail Inválido')
+    } 
+
   }
     return (
 
+    
         <Container>
+                 <ToastContainer />
+        <LoadingBar color="red" ref={LoadingBar} /> 
 
         
             <div class="cabecalho-inicio">

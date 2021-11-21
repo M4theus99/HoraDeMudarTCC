@@ -5,10 +5,10 @@ export default class infob_hdm_admin extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_HDM_chat: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     ds_HDM_mensagem: {
       type: DataTypes.STRING(255),
@@ -21,6 +21,10 @@ export default class infob_hdm_admin extends Model {
     dt_HDM_data: {
       type: DataTypes.DATE,
       allowNull: true
+    },
+    infob_ds_codigo: {
+      type: DataTypes.STRING(100),
+      allowNull: false
     }
   }, {
     sequelize,

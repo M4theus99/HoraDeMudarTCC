@@ -5,18 +5,14 @@ export default class infoc_tct_chat extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_chat: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     id_cliente: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'infoc_tct_cliente',
-        key: 'id_cliente'
-      }
+      allowNull: true
     },
     id_administrador: {
       type: DataTypes.INTEGER,

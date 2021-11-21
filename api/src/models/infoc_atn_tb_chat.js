@@ -5,10 +5,10 @@ export default class infoc_atn_tb_chat extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_chat: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     id_sala: {
       type: DataTypes.INTEGER,

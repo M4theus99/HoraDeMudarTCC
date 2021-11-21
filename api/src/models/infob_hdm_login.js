@@ -5,10 +5,10 @@ export default class infob_hdm_login extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_HDM_login: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     nm_HDM_nome: {
       type: DataTypes.STRING(500),

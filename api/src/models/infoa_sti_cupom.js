@@ -5,10 +5,10 @@ export default class infoa_sti_cupom extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_cupom: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     ds_nome_desconto: {
       type: DataTypes.STRING(255),

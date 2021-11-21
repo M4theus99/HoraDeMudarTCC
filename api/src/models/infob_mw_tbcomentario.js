@@ -1,10 +1,10 @@
 import _sequelize from 'sequelize';
 const { Model, Sequelize } = _sequelize;
 
-export default class infob_mw_tbcomentarios extends Model {
+export default class infob_mw_tbcomentario extends Model {
   static init(sequelize, DataTypes) {
   super.init({
-    id_cometariio: {
+    id_cometario: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -12,11 +12,19 @@ export default class infob_mw_tbcomentarios extends Model {
     },
     id_filme: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'infob_mw_filmes',
+        key: 'id_filme'
+      }
     },
     id_usuario: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'infob_mw_usuario',
+        key: 'id_usuario'
+      }
     },
     ds_mensagem: {
       type: DataTypes.STRING(300),
@@ -36,7 +44,7 @@ export default class infob_mw_tbcomentarios extends Model {
     }
   }, {
     sequelize,
-    tableName: 'infob_mw_tbcomentarios',
+    tableName: 'infob_mw_tbcomentario',
     timestamps: false,
     indexes: [
       {
@@ -44,7 +52,7 @@ export default class infob_mw_tbcomentarios extends Model {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "id_cometariio" },
+          { name: "id_cometario" },
         ]
       },
       {
@@ -63,6 +71,6 @@ export default class infob_mw_tbcomentarios extends Model {
       },
     ]
   });
-  return infob_mw_tbcomentarios;
+  return infob_mw_tbcomentario;
   }
 }

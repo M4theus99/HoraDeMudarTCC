@@ -5,18 +5,14 @@ export default class infoc_nws_tb_evento extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_evento: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     id_categoria: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'infoc_nws_tb_categoria',
-        key: 'id_categoria'
-      }
+      allowNull: true
     },
     nm_evento: {
       type: DataTypes.STRING(255),

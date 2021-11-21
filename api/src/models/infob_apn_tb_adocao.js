@@ -5,10 +5,10 @@ export default class infob_apn_tb_adocao extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     ID_ADOCAO: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     ID_USER: {
       type: DataTypes.INTEGER,

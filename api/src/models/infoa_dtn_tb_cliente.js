@@ -5,10 +5,10 @@ export default class infoa_dtn_tb_cliente extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_cliente: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     ds_email: {
       type: DataTypes.STRING(150),

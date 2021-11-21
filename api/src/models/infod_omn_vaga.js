@@ -15,7 +15,7 @@ export default class infod_omn_vaga extends Model {
       allowNull: true
     },
     vl_salario: {
-      type: DataTypes.DECIMAL(12,5),
+      type: DataTypes.DECIMAL(10,5),
       allowNull: true
     },
     id_empresa: {

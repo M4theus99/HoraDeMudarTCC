@@ -5,26 +5,18 @@ export default class infoc_tdv_pedido extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_pedido: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     id_cliente: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'infoc_tdv_cliente',
-        key: 'id_cliente'
-      }
+      allowNull: true
     },
     id_cupom: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'infoc_tdv_cupom',
-        key: 'id_cupom'
-      }
+      allowNull: true
     },
     nr_pedido: {
       type: DataTypes.INTEGER,

@@ -5,18 +5,14 @@ export default class infoa_gab_endereco extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_endereco: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     id_usuario: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'infoa_gab_usuario',
-        key: 'id_usuario'
-      }
+      allowNull: false
     },
     nm_bairro: {
       type: DataTypes.STRING(255),

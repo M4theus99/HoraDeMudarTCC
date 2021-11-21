@@ -5,10 +5,10 @@ export default class infob_hdm_chat_denuncias extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_HDM_chat_denuncias: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     ds_HDM_texto: {
       type: DataTypes.STRING(500),

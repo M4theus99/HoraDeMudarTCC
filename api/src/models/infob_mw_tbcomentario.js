@@ -5,26 +5,18 @@ export default class infob_mw_tbcomentario extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_cometario: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     id_filme: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'infob_mw_filmes',
-        key: 'id_filme'
-      }
+      allowNull: true
     },
     id_usuario: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'infob_mw_usuario',
-        key: 'id_usuario'
-      }
+      allowNull: true
     },
     ds_mensagem: {
       type: DataTypes.STRING(300),

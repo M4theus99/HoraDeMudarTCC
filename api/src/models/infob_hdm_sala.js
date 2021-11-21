@@ -5,10 +5,10 @@ export default class infob_hdm_sala extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_hdm_sala: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+      primaryKey: true
     },
     nm_sala: {
       type: DataTypes.STRING(255),

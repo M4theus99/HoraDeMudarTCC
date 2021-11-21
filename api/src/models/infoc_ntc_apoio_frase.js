@@ -5,10 +5,10 @@ export default class infoc_ntc_apoio_frase extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_frase: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+      primaryKey: true
     },
     ds_frase: {
       type: DataTypes.STRING(255),

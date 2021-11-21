@@ -5,10 +5,10 @@ export default class infoc_ntc_caracteristica_fisica extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_fisico: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     ds_pele: {
       type: DataTypes.STRING(255),

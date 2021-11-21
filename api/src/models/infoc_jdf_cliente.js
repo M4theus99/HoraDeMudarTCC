@@ -5,14 +5,18 @@ export default class infoc_jdf_cliente extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_cliente: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+      primaryKey: true
     },
     id_cartao: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'infoc_jdf_cartao',
+        key: 'id_cartao'
+      }
     },
     nm_cliente: {
       type: DataTypes.STRING(255),

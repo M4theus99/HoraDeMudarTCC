@@ -32,7 +32,7 @@ export default class infob_hdm_usuario extends Model {
     },
     ds_codigo: {
       type: DataTypes.STRING(100),
-      allowNull: false
+      allowNull: true
     }
   }, {
     sequelize,

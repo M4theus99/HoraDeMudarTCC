@@ -1,10 +1,10 @@
 import _sequelize from 'sequelize';
 const { Model, Sequelize } = _sequelize;
 
-export default class infod_ecm_td_roupas_infa extends Model {
+export default class infod_ecm_tb_calc extends Model {
   static init(sequelize, DataTypes) {
   super.init({
-    id_roupa_infa: {
+    id_calc: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -14,20 +14,20 @@ export default class infod_ecm_td_roupas_infa extends Model {
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    nm_roupa: {
-      type: DataTypes.STRING(255),
-      allowNull: false
+    ds_roupa: {
+      type: DataTypes.STRING(150),
+      allowNull: true
+    },
+    vl_preco: {
+      type: DataTypes.DECIMAL(15,2),
+      allowNull: true
+    },
+    tp_roupa: {
+      type: DataTypes.STRING(60),
+      allowNull: true
     },
     ds_tamanho: {
-      type: DataTypes.STRING(5),
-      allowNull: false
-    },
-    valor: {
-      type: DataTypes.DECIMAL(10,2),
-      allowNull: false
-    },
-    nm_fornecedor: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.CHAR(10),
       allowNull: true
     },
     bt_disponivel: {
@@ -41,14 +41,10 @@ export default class infod_ecm_td_roupas_infa extends Model {
     ds_cor: {
       type: DataTypes.STRING(50),
       allowNull: true
-    },
-    imagem: {
-      type: DataTypes.STRING(400),
-      allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'infod_ecm_td_roupas_infa',
+    tableName: 'infod_ecm_tb_calc',
     timestamps: false,
     indexes: [
       {
@@ -56,7 +52,7 @@ export default class infod_ecm_td_roupas_infa extends Model {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "id_roupa_infa" },
+          { name: "id_calc" },
         ]
       },
       {
@@ -68,6 +64,6 @@ export default class infod_ecm_td_roupas_infa extends Model {
       },
     ]
   });
-  return infod_ecm_td_roupas_infa;
+  return infod_ecm_tb_calc;
   }
 }

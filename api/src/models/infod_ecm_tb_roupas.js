@@ -1,10 +1,10 @@
 import _sequelize from 'sequelize';
 const { Model, Sequelize } = _sequelize;
 
-export default class infod_ecm_td_roupas_femi extends Model {
+export default class infod_ecm_tb_roupas extends Model {
   static init(sequelize, DataTypes) {
   super.init({
-    id_roupa_femi: {
+    id_roupa: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -12,27 +12,39 @@ export default class infod_ecm_td_roupas_femi extends Model {
     },
     id_categoria: {
       type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    ds_roupa: {
+      type: DataTypes.STRING(150),
       allowNull: false
     },
-    nm_roupa: {
-      type: DataTypes.STRING(255),
+    vl_preco: {
+      type: DataTypes.DECIMAL(15,2),
+      allowNull: false
+    },
+    tp_roupa: {
+      type: DataTypes.STRING(60),
       allowNull: false
     },
     ds_tamanho: {
       type: DataTypes.STRING(5),
       allowNull: false
     },
-    valor: {
-      type: DataTypes.DECIMAL(10,2),
-      allowNull: false
+    bt_disponivel: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true
     },
-    nm_fornecedor: {
+    qtd_disponivel: {
       type: DataTypes.INTEGER,
       allowNull: true
+    },
+    ds_cor: {
+      type: DataTypes.STRING(50),
+      allowNull: false
     }
   }, {
     sequelize,
-    tableName: 'infod_ecm_td_roupas_femi',
+    tableName: 'infod_ecm_tb_roupas',
     timestamps: false,
     indexes: [
       {
@@ -40,7 +52,7 @@ export default class infod_ecm_td_roupas_femi extends Model {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "id_roupa_femi" },
+          { name: "id_roupa" },
         ]
       },
       {
@@ -52,6 +64,6 @@ export default class infod_ecm_td_roupas_femi extends Model {
       },
     ]
   });
-  return infod_ecm_td_roupas_femi;
+  return infod_ecm_tb_roupas;
   }
 }

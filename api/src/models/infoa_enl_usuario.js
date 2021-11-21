@@ -85,6 +85,10 @@ export default class infoa_enl_usuario extends Model {
     nm_rua: {
       type: DataTypes.STRING(100),
       allowNull: true
+    },
+    ds_codigo: {
+      type: DataTypes.STRING(100),
+      allowNull: true
     }
   }, {
     sequelize,

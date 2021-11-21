@@ -45,16 +45,15 @@ export default class Api {
 
   //Chat
     async removerMensagem(id) {
-        let r = await api.delete(`/chat/${id}`)
+        let r = await api.delete('/Chat/' + id)
         return r.data
     }
-
 
 
     // API CHAT DENUNCIA
     async listarMensagensDENUN() {
         let r = await api.get(`/chatdenu`);
-        return r.data;
+        return r.data; 
     }
     async inserirMensagemDENUN(texto) {
         let conversa = {

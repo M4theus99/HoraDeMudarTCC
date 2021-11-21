@@ -1,10 +1,10 @@
 import _sequelize from 'sequelize';
 const { Model, Sequelize } = _sequelize;
 
-export default class infob_mw_comentarios extends Model {
+export default class infob_mw_tbcomentarios extends Model {
   static init(sequelize, DataTypes) {
   super.init({
-    id_cometario: {
+    id_cometariio: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -36,7 +36,7 @@ export default class infob_mw_comentarios extends Model {
     }
   }, {
     sequelize,
-    tableName: 'infob_mw_comentarios',
+    tableName: 'infob_mw_tbcomentarios',
     timestamps: false,
     indexes: [
       {
@@ -44,7 +44,7 @@ export default class infob_mw_comentarios extends Model {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "id_cometario" },
+          { name: "id_cometariio" },
         ]
       },
       {
@@ -63,6 +63,6 @@ export default class infob_mw_comentarios extends Model {
       },
     ]
   });
-  return infob_mw_comentarios;
+  return infob_mw_tbcomentarios;
   }
 }

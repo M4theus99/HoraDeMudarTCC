@@ -41,12 +41,13 @@ export default function Routes() {
                   <Route path="/RedefinirSenha" exact={true} component={RedefinirSenha}/>
                   <Route path="/Denúncia" exact={true} component={Denúncia}/>
                   <Route path="/TipoAssedio" exact={true} component={TipoAssedio}/>  
-                  <Route path="/QuemSomosNos" exact={true} component={QuemSomosNos}/> 
-                  <Route path="/CaracteristicasLocalizaçao" exact={true} component={CaracteristicasLocalizaçao}/>
+                  <Route path="/CaracteristicasLocalizaçao" exact={true} component={CaracteristicasLocalizaçao}/>oute path="/QuemSomosNos" exact={true} component={QuemSomosNos}/> 
+                  
                  <Route path="/LoginADM" exact={true} component={LoginADM}/> 
                 <Route path="/AutorizaçaoMensagem" exact={true} component={AutorizaçaoMensagem}/>
                 {/*
-                 <Route path="/InformaçoesLocalizacao" exact={true} component={InformaçoesLocalizacao}/>
+                
+                <Route path="/InformaçoesLocalizacao" exact={true} component={InformaçoesLocalizacao}/>
                 <Route path="/InformaçoesDenuncia" exact={true} component={InformaçoesDenuncia}/> */}
                 <Route path="/RedefinirSenhaADM" exact={true} component={RedefinirSenhaADM}/>
                 <Route path="/EsqueceuSenha" exact={true} component={EsqueceuSenha}/>

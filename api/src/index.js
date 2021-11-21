@@ -357,9 +357,9 @@ try{
         }
     });
 
-    app.delete('/chat/:id', async (req, resp) => {
+   app.delete('/Chat/:id', async (req, resp) => {
         try {
-            let r = await db.tb_chat.destroy({ where: { id_chat: req.params.id} })
+            let r = await db.infob_hdm_chat.destroy({ where: { id_HDM_chat: req.params.id} })
             resp.sendStatus(200);
         } catch (e) {
             resp.send({ erro: e.toString() });

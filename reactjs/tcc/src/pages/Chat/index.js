@@ -59,13 +59,7 @@ export default function Chat () {
     ListaMensagem();
    })
      
-    //const removerMensagem = async (id) => {
-    //const r = await api.removerMensagem(id);
-    //if (!validarResposta(r));
-
-    //toast.dark('💕 Mensagem Removida!');
-    //await carregarMensagens();
-//}
+  
 
     return (
   

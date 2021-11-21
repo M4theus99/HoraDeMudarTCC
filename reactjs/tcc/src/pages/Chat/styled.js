@@ -186,22 +186,13 @@ const Container = styled.div`
   margin-left: 1em;
 }
 
-.coracao1 img {
-  width: 17px;
-  height: 18px;
-  margin-left: 10px;
-}
-
-.quantidade1 {
-  margin-left: 5px;
-}
 
 
 .depoimento3 {
   display: flex;
-  flex-direction: column;
-  margin-left: 10em;
-  margin-right: 15em;
+  flex-direction: row;
+  margin-left: 5em;
+ 
   padding: 1em;
 }
 
@@ -210,6 +201,8 @@ const Container = styled.div`
   font-family: Roboto-Medium;
   border-radius:10px;
   width: 700px;
+  display: flex;
+  flex-direction: row;
 }
 
 .usuario3 {
@@ -221,7 +214,7 @@ const Container = styled.div`
 .reagir_msg3 {
   display: flex;
   flex-direction: row;
-  margin-left: 5em;
+  
 }
 
 .curtidas3 {
@@ -233,7 +226,7 @@ const Container = styled.div`
 .coracao3 img {
   width: 17px;
   height: 18px;
-  margin-right: 15px;
+  margin-top: 7px;
 }
 
 .comentario {
@@ -279,13 +272,20 @@ input {
   border-radius: 0px 0px 25px 25px;
 }
 
-.meu_perfil {
-  margin-left: 8em;
-}
-
 button {
   color: #207BE5;
   margin-left: 5px;
+}
+
+.lixeira img {
+  width: 18px;
+  height: 18px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.meu_perfil {
+  margin-left: 10em;
 }
 
 `;

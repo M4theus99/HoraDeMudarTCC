@@ -1,30 +1,38 @@
 import _sequelize from 'sequelize';
 const { Model, Sequelize } = _sequelize;
 
-export default class infob_mw_lista extends Model {
+export default class infod_ecm_usuario extends Model {
   static init(sequelize, DataTypes) {
   super.init({
-    id_lista: {
+    id_usuario: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    id_usuario: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    nm_lista: {
+    nm_usuario: {
       type: DataTypes.STRING(255),
       allowNull: true
     },
-    ds_descricao: {
+    ds_email: {
       type: DataTypes.STRING(255),
+      allowNull: true
+    },
+    ds_telefone_cel: {
+      type: DataTypes.STRING(20),
+      allowNull: true
+    },
+    ds_cpf: {
+      type: DataTypes.STRING(15),
+      allowNull: true
+    },
+    ds_senha: {
+      type: DataTypes.STRING(128),
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'infob_mw_lista',
+    tableName: 'infod_ecm_usuario',
     timestamps: false,
     indexes: [
       {
@@ -32,18 +40,11 @@ export default class infob_mw_lista extends Model {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "id_lista" },
-        ]
-      },
-      {
-        name: "id_usuario",
-        using: "BTREE",
-        fields: [
           { name: "id_usuario" },
         ]
       },
     ]
   });
-  return infob_mw_lista;
+  return infod_ecm_usuario;
   }
 }

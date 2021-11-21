@@ -42,10 +42,6 @@ export default class infod_tif_animes extends Model {
       type: DataTypes.STRING(5000),
       allowNull: true
     },
-    ds_capa: {
-      type: DataTypes.STRING(155),
-      allowNull: true
-    },
     dt_postagem: {
       type: DataTypes.DATE,
       allowNull: true
@@ -64,6 +60,10 @@ export default class infod_tif_animes extends Model {
     },
     ds_imagem: {
       type: DataTypes.STRING(1555),
+      allowNull: true
+    },
+    ds_capa: {
+      type: DataTypes.STRING(800),
       allowNull: true
     }
   }, {

@@ -1,6 +1,16 @@
 import { Container } from "../styled"
+import Api from "../../../service/api"; 
+
+const api = new Api();
+
+
+
 
 export default function BoxMensagem(props){
+
+    const remover = async (id) => {
+    const r = await api.removerMensagem(id);
+}
 
     return(
         <Container>
@@ -15,16 +25,22 @@ export default function BoxMensagem(props){
         </div>
 
         <div class="mensagem3">
-          {props.info.ds_HDM_mensagem}
+          
+          <div class="lixeira">
+             <img onClick={() => remover(props.info.id_HDM_chat)} src="/assets/imagens/pg-chat-lixeira.png" alt="" style={{cursor: 'pointer'}}/>
+          </div>
+          
+          {props.info.ds_HDM_mensagem} 
         </div>
+
+      
+
 
         <div class="reagir_msg3">
           <div class="curtidas3">
             <div class="coracao3">
                 <img src="/assets/imagens/pg-chat-coracao.png" alt=""/>
             </div>
-
-            <div class="quantidade3">23</div>
           </div>
         </div>
       </div>

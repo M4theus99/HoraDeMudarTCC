@@ -43,7 +43,7 @@ const Container= styled.div`
 .texto-fx1{
     font-size: 4em;
     font-family: Roboto-medium;
-    font-style: italic;
+    color: #fff;
 }
 
 
@@ -52,6 +52,47 @@ const Container= styled.div`
     animation: animar 3s infinite;
 }
 
+.tabela{
+   background-color: #E9E7E7;
+   flex-direction: column;
+
+}
+
+
+.chatt{
+    margin-left: 3em;
+    font-size: 1.5em;
+    font-family: Roboto-medium;
+    text-shadow: #CCC 1px 0 10px;
+    line-height: 1.8;
+}
+
+.linha-alternada {
+    background-color: #fff;
+}
+
+.coluna-acao {
+    width: .1em;
+}
+
+.coluna-acao > button {
+    
+}
+
+tr:hover{
+    .coluna-acao > button {
+        visibility: visible;
+    }
+}
+
+button {
+    cursor: pointer;
+}
+
+.button-create button:hover {
+    background-color: #FFF;
+    transition: 2s;
+}
 
 @keyframes animar {
     0% {

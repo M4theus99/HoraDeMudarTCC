@@ -279,7 +279,7 @@ const Container = styled.div`
 
 .chatt{
     
-    margin-left: 5em;
+    margin-left: 2em;
 
 }
 

@@ -44,11 +44,11 @@ export default class Api {
     }
 
   //Chat
+
     async removerMensagem(id) {
         let r = await api.delete('/Chat/' + id)
-        return r.data
+        return r.data;
     }
-
 
     // API CHAT DENUNCIA
     async listarMensagensDENUN() {

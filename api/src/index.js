@@ -357,9 +357,11 @@ try{
         }
     });
 
+
    app.delete('/Chat/:id', async (req, resp) => {
         try {
             let r = await db.infob_hdm_chat.destroy({ where: { id_HDM_chat: req.params.id} })
+
             resp.sendStatus(200);
         } catch (e) {
             resp.send({ erro: e.toString() });

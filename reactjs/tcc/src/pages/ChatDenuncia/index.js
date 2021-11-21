@@ -109,18 +109,16 @@ const remover = async () => {
          <div class="chat">
              <div class="containerimg">
                  <div class="test">
-                 <div class="policial1"> Policial</div>
                  <div class="user1"> <img src="/assets/imagens/pg-chatdenun-user.png" widht="100" height="100" alt=""/> </div>
                  
-                 <div class="balao1">  Olá qual é a sua denúncia </div>
+                 <div class="balao1"> <b>Policial:</b> Olá qual é a sua denúncia </div>
                 
             
                  </div>
                  
                  <div class= "test3">
-                 <div class="policial2"> Policial</div>
                  <div class="user2"> <img src="/assets/imagens/pg-chatdenun-user.png" widht="100" height="100" alt=""/> </div>
-                 <div class="balao2"> Me mande sua localização atual</div>
+                 <div class="balao2"> <b>Policial:</b> Me mande sua localização atual</div>
                  </div>
                  
                  </div>
@@ -130,8 +128,8 @@ const remover = async () => {
                         <div key={x.id_HDM_chat_denuncias}>
                             <div className="chat-message">
                             
-                                <div><b>Eu</b>: </div>
-                                <div> {x.ds_HDM_texto} </div>
+                              
+                                <div> <b>Eu</b>: {x.ds_HDM_texto} </div>
                             </div>
                         </div>
                     )}

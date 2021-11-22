@@ -33,31 +33,7 @@ export default class infoa_dtn_tb_venda_item extends Model {
   }, {
     sequelize,
     tableName: 'infoa_dtn_tb_venda_item',
-    timestamps: false,
-    indexes: [
-      {
-        name: "PRIMARY",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "id_venda_item" },
-        ]
-      },
-      {
-        name: "id_venda",
-        using: "BTREE",
-        fields: [
-          { name: "id_venda" },
-        ]
-      },
-      {
-        name: "id_produto",
-        using: "BTREE",
-        fields: [
-          { name: "id_produto" },
-        ]
-      },
-    ]
+    timestamps: false
   });
   return infoa_dtn_tb_venda_item;
   }

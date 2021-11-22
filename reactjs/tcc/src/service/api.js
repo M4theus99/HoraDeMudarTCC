@@ -16,8 +16,8 @@ export default class Api {
         return r.data
     }
 
-    async inserir (nome, sobrenome, celular, email, senha, confirmar ) {
-        let r = await api.post('/cadastro', {nome, sobrenome, celular, email, senha, confirmar })
+    async inserir (nome, sobrenome, celular, email, senha ) {
+        let r = await api.post('/cadastro', {nome, sobrenome, celular, email, senha })
         return r.data;
     }
 
@@ -81,6 +81,13 @@ export default class Api {
 
     async listarMensagensChat() { 
         let r = await api.get(`/Chat`);
+        return r.data;
+    }
+
+
+    //API CARACTERISTICAS
+    async inserirCaracteristicas( ds_nome, bt_branco, nr_idade, ds_estado, ds_cidade, ds_bairro, ds_rua, nr_numero, nr_cep, ds_complemento, ds_ponto_de_ref, bt_pardo, bt_amarelo, bt_negro, bt_vermelho, bt_castanhos, bt_azuis, bt_verdes, bt_pretoOLHOS, bt_outroOLHOS, bt_liso, bt_ondulado, bt_cacheado, bt_crespo, bt_careca, bt_loiro, bt_ruivo, bt_castanhoescuro, bt_castanhoclaro, bt_pretoCABELO, bt_outroCABELO, bt_alto, bt_medio, bt_baixo, bt_obeso, bt_gordo, bt_magro, bt_outroESTATURA, bt_adolescente, bt_adulto, bt_idoso, bt_bone, bt_chapeu, bt_oculos, bt_brinco, bt_corrente, bt_outroACESSORIO ){
+        let r = await api.post('/caracteristicas', { ds_nome, bt_branco, nr_idade, ds_estado, ds_cidade, ds_bairro, ds_rua, nr_numero, nr_cep, ds_complemento, ds_ponto_de_ref, bt_pardo, bt_amarelo, bt_negro, bt_vermelho, bt_castanhos, bt_azuis, bt_verdes, bt_pretoOLHOS, bt_outroOLHOS, bt_liso, bt_ondulado, bt_cacheado, bt_crespo, bt_careca, bt_loiro, bt_ruivo, bt_castanhoescuro, bt_castanhoclaro, bt_pretoCABELO, bt_outroCABELO, bt_alto, bt_medio, bt_baixo, bt_obeso, bt_gordo, bt_magro, bt_outroESTATURA, bt_adolescente, bt_adulto, bt_idoso, bt_bone, bt_chapeu, bt_oculos, bt_brinco, bt_corrente, bt_outroACESSORIO });
         return r.data;
     }
 

@@ -35,7 +35,7 @@
 
     async function inserir () {
         loading.current.continuousStart();
-        let r = await api.inserir(Nome, Sobrenome, Celular, Email, Senha, Confirmar );
+        let r = await api.inserir(Nome, Sobrenome, Celular, Email, Senha );
 
       
         if (r.erro) {

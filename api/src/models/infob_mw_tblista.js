@@ -5,18 +5,14 @@ export default class infob_mw_tblista extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_lista: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     id_usuario: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'infob_mw_usuario',
-        key: 'id_usuario'
-      }
+      allowNull: true
     },
     nm_lista: {
       type: DataTypes.STRING(255),

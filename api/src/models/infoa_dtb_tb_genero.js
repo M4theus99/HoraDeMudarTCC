@@ -21,17 +21,7 @@ export default class infoa_dtb_tb_genero extends Model {
   }, {
     sequelize,
     tableName: 'infoa_dtb_tb_genero',
-    timestamps: false,
-    indexes: [
-      {
-        name: "PRIMARY",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "ID_GENERO" },
-        ]
-      },
-    ]
+    timestamps: false
   });
   return infoa_dtb_tb_genero;
   }

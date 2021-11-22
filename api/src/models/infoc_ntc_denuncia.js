@@ -5,18 +5,14 @@ export default class infoc_ntc_denuncia extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_denuncia: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     id_usuario: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'infoc_ntc_usuario',
-        key: 'id_usuario'
-      }
+      allowNull: true
     },
     ds_depoimento: {
       type: DataTypes.STRING(2000),
@@ -28,11 +24,7 @@ export default class infoc_ntc_denuncia extends Model {
     },
     id_local: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'infoc_ntc_local',
-        key: 'id_local'
-      }
+      allowNull: true
     },
     bt_ativo: {
       type: DataTypes.BOOLEAN,
@@ -40,19 +32,11 @@ export default class infoc_ntc_denuncia extends Model {
     },
     id_fisico: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'infoc_ntc_caracteristica_fisica',
-        key: 'id_fisico'
-      }
+      allowNull: true
     },
     id_vestimento: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'infoc_ntc_vestimento',
-        key: 'id_vestimento'
-      }
+      allowNull: true
     }
   }, {
     sequelize,

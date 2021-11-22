@@ -5,26 +5,18 @@ export default class infod_tif_comentario extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_comentario: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     id_usuario: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'infod_tif_usuario',
-        key: 'id_usuario'
-      }
+      allowNull: true
     },
     id_anime: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'infod_tif_animes',
-        key: 'id_anime'
-      }
+      allowNull: true
     },
     ds_comentario: {
       type: DataTypes.STRING(255),

@@ -32,22 +32,12 @@ export default class infob_hdm_usuario extends Model {
     },
     ds_codigo: {
       type: DataTypes.STRING(100),
-      allowNull: true
+      allowNull: false
     }
   }, {
     sequelize,
     tableName: 'infob_hdm_usuario',
-    timestamps: false,
-    indexes: [
-      {
-        name: "PRIMARY",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "id_HDM_usuario" },
-        ]
-      },
-    ]
+    timestamps: false
   });
   return infob_hdm_usuario;
   }

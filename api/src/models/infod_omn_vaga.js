@@ -65,31 +65,7 @@ export default class infod_omn_vaga extends Model {
   }, {
     sequelize,
     tableName: 'infod_omn_vaga',
-    timestamps: false,
-    indexes: [
-      {
-        name: "PRIMARY",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "id_vaga" },
-        ]
-      },
-      {
-        name: "id_empresa",
-        using: "BTREE",
-        fields: [
-          { name: "id_empresa" },
-        ]
-      },
-      {
-        name: "id_area_vaga",
-        using: "BTREE",
-        fields: [
-          { name: "id_area_vaga" },
-        ]
-      },
-    ]
+    timestamps: false
   });
   return infod_omn_vaga;
   }

@@ -33,17 +33,7 @@ export default class insf_tb_usuario extends Model {
   }, {
     sequelize,
     tableName: 'insf_tb_usuario',
-    timestamps: false,
-    indexes: [
-      {
-        name: "PRIMARY",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "id_usuario" },
-        ]
-      },
-    ]
+    timestamps: false
   });
   return insf_tb_usuario;
   }

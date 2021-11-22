@@ -61,24 +61,7 @@ export default class infoc_tdv_livro extends Model {
   }, {
     sequelize,
     tableName: 'infoc_tdv_livro',
-    timestamps: false,
-    indexes: [
-      {
-        name: "PRIMARY",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "id_livro" },
-        ]
-      },
-      {
-        name: "id_genero",
-        using: "BTREE",
-        fields: [
-          { name: "id_genero" },
-        ]
-      },
-    ]
+    timestamps: false
   });
   return infoc_tdv_livro;
   }

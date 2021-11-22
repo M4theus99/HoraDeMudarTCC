@@ -33,24 +33,7 @@ export default class infoc_tct_chat extends Model {
   }, {
     sequelize,
     tableName: 'infoc_tct_chat',
-    timestamps: false,
-    indexes: [
-      {
-        name: "PRIMARY",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "id_chat" },
-        ]
-      },
-      {
-        name: "id_cliente",
-        using: "BTREE",
-        fields: [
-          { name: "id_cliente" },
-        ]
-      },
-    ]
+    timestamps: false
   });
   return infoc_tct_chat;
   }

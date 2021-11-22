@@ -5,10 +5,10 @@ export default class infoc_tct_cartao extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_cartao: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     nm_dono: {
       type: DataTypes.STRING(40),

@@ -17,17 +17,7 @@ export default class infoc_tdv_genero extends Model {
   }, {
     sequelize,
     tableName: 'infoc_tdv_genero',
-    timestamps: false,
-    indexes: [
-      {
-        name: "PRIMARY",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "id_genero" },
-        ]
-      },
-    ]
+    timestamps: false
   });
   return infoc_tdv_genero;
   }

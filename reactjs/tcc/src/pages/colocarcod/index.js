@@ -26,7 +26,7 @@ export default function  EsqueceuSenha () {
     loading.current.continuousStart();
     const r = await axios.post(`http://localhost:3030/EsqueceuSenha` , { email : email, ds_codido: codigo});
     if (r.data.status === 'ok') {
-        navigation.push('/codrec', { email: email, ds_codido: codigo})
+        navigation.push('/RedefinirSenha', { email: email, ds_codido: codigo})
  console.log(r)
     } else {
         toast.error('E-mail inválido');
@@ -68,7 +68,7 @@ export default function  EsqueceuSenha () {
     
                 <div class="titulo">
     
-                    <div class="texto">Recuperação de Senha</div>
+                    <div class="texto">Código de Recuperação</div>
     
     
                 </div>
@@ -79,7 +79,7 @@ export default function  EsqueceuSenha () {
                 <div class="campos">
     
                 <div class="caixa-1">
-                <input type="text" value={email} onChange={e=> setEmail(e.target.value) }  name="" placeholder="Ensira o seu email:"/>
+                <input type="text" value={email} onChange={e=> setEmail(e.target.value) }  name="" placeholder="Ensira o codigo:"/>
                 </div>
     
              

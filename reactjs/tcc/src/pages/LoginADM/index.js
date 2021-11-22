@@ -45,7 +45,7 @@ export default function LoginADM() {
             loading.current.complete();
         } else {
             Cookies.set('usuario-logado', JSON.stringify(r));
-            navigation.push('/');
+            navigation.push('/AutorizaçaoMensagem');
         }
 
     }

@@ -1,34 +1,26 @@
 import _sequelize from 'sequelize';
 const { Model, Sequelize } = _sequelize;
 
-export default class infoc_ntc_caracteristica_fisica extends Model {
+export default class infoc_tht_loginadm extends Model {
   static init(sequelize, DataTypes) {
   super.init({
-    id_fisico: {
+    id_loginAdm: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    ds_pele: {
-      type: DataTypes.STRING(255),
+    ds_emailAdm: {
+      type: DataTypes.STRING(50),
       allowNull: true
     },
-    ds_cabelo: {
-      type: DataTypes.STRING(255),
-      allowNull: true
-    },
-    ds_cor_cabelo: {
-      type: DataTypes.STRING(255),
-      allowNull: true
-    },
-    ds_complemento: {
-      type: DataTypes.STRING(255),
+    ds_senhaAdm: {
+      type: DataTypes.STRING(50),
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'infoc_ntc_caracteristica_fisica',
+    tableName: 'infoc_tht_loginadm',
     timestamps: false,
     indexes: [
       {
@@ -36,11 +28,11 @@ export default class infoc_ntc_caracteristica_fisica extends Model {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "id_fisico" },
+          { name: "id_loginAdm" },
         ]
       },
     ]
   });
-  return infoc_ntc_caracteristica_fisica;
+  return infoc_tht_loginadm;
   }
 }

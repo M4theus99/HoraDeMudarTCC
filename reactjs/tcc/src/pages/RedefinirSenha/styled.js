@@ -103,6 +103,7 @@ button {
     font-family: Roboto-Medium;
     font-size: 1.5em;
     margin-top: 2.5em;
+    boder-color: transp
 }
 
 `

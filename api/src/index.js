@@ -13,7 +13,7 @@ app.post('/cadastro', async (req, resp) => {
     try {
         let usuParam = req.body;
 
-        let u = await db.infob_hdm_usuario.findOne({ where: { nm_HDM_email: usuParam.email } });
+        let u = await db.infob_hdm_cadastro.findOne({ where: { nm_HDM_email: usuParam.email } });
         if (u != null)
             return resp.send({ erro: 'Usuário já existe!' });
 
@@ -38,7 +38,7 @@ app.post('/cadastro', async (req, resp) => {
 
 
 
-        let r = await db.infob_hdm_usuario.create({
+        let r = await db.infob_hdm_cadastro.create({
             nm_HDM_nome: usuParam.nome,
             nm_HDM_sobrenome: usuParam.sobrenome,
             nr_HDM_celular: usuParam.celular,
@@ -55,7 +55,7 @@ app.post('/cadastro', async (req, resp) => {
 
 app.get('/cadastro', async (req, resp) => {
     try {
-        let usuarios = await db.infob_hdm_usuario.findAll();
+        let usuarios = await db.infob_hdm_cadastro.findAll();
         resp.send(usuarios);
     } catch (e) {
         resp.send({ erro: e.toString() })
@@ -180,25 +180,27 @@ app.post('/cadastro_adm', async (req, resp) => {
 })
 
 app.post('/EsqueceuSenha', async(req, resp) => {
-    const user = await db.infob_hdm_usuario.findOne({
+    const user = await db.infob_hdm_cadastro.findOne({
         where: {
             nm_HDM_email: req.body.email
         }
     });
 
     if(!user) {
-        return resp.send({ erro: 'E-mail Inválido'});
+        return resp.send({ error: 'E-mail Inválido'});
     }
     let code = getRandomIntereger(1000, 9999);
-    await db.infob_hdm_usuario.update({
-        ds_codigo: code
+    await db.infob_hdm_cadastro.update({
+        ds_codido: code
 
     }, {
-        where: {id_HDM_usuario: user.id_HDM_usuario}
+        where: {id_HDM_cadastro: user.id_HDM_cadastro}
     })
+
+    console.log(user.nm_HDM_email)
     enviarEmail(user.nm_HDM_email, 'Recuperação de E-mail', `
         <h3> Recuperação de Senha </h3>
-        <p> Você solicitou a recuperação de sua senha no site Destiny. </p>
+        <p> Você solicitou a recuperação de sua senha no site Hora de mudar. </p>
         <p> Entre com o código ${code} para prosseguir com a recuperação.
     `)
         resp.send({ status: 'ok'})
@@ -214,7 +216,7 @@ function getRandomIntereger(min, max){
 
 
 app.post('/validarCodigo', async (req, resp) => {
-    const user = await db.infob_hdm_usuario.findOne({
+    const user = await db.infob_hdm_cadastro.findOne({
         where: {
             nm_HDM_email: req.body.email
         }
@@ -232,7 +234,7 @@ app.post('/validarCodigo', async (req, resp) => {
 
 
 app.put('/RedefinirSenha', async (req, resp) => {
-    const user = await db.infob_hdm_usuario.findOne({
+    const user = await db.infob_hdm_cadastro.findOne({
         where: {
             nm_HDM_email: req.body.email
         }
@@ -241,7 +243,7 @@ app.put('/RedefinirSenha', async (req, resp) => {
         resp.send( {status: 'erro', mensagem: 'Email Inválido'});
     }
 
-    let r = await db.infob_hdm_usuario.update({
+    let r = await db.infob_hdm_cadastro.update({
         ds_HDM_senha: req.body.novaSenha}, {where: {id_HDM_usuario: user.id_HDM_usuario}} )
         
     resp.send({ status: 'ok', mensagem: 'A senha foi alterada'})

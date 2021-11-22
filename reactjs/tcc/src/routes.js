@@ -16,6 +16,7 @@ import QuemSomosNos from './pages/QuemSomosNos'
 import AutorizaçaoMensagem from './pages/AutorizaçaoMensagem'
 import LoginADM from './pages/LoginADM'
 import ChatDenuncia from './pages/ChatDenuncia'
+import ColocarCod from './pages/colocarcod'
 //import InformaçoesLocalizacao from './pages/InformaçoesLocalizacao'
 //import InformaçoesDenuncia from './pages/InformacoesDenuncia'
 import RedefinirSenhaADM from './pages/RedefinirSenhaADM'
@@ -31,6 +32,7 @@ export default function Routes() {
             <Switch> 
                 <Route path="/" exact={true} component={TelaInicio}/> 
                   <Route path="/autoestima" exact={true} component={AutoEstima}/> 
+                  <Route path="/codrec" exact={true} component={ColocarCod}/> 
                 <Route path="/TipoViolencia" exact={true} component={TipoViolencia}/>
                  <Route path="/Chat" exact= {true} component={Chat}/> 
                 <Route path="/Cadastro" exact={true} component={Cadastro}/>

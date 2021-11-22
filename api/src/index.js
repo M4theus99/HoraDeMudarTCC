@@ -405,6 +405,76 @@ try{
         }
     });
     
+    //API CARACTERISTICAS
+    app.post ('/caracteristicas', async (req,resp) => {
+        try{
+            let { ds_nome, bt_branco, nr_idade, ds_estado, ds_cidade, ds_bairro, ds_rua, nr_numero, nr_cep, ds_complemento, ds_ponto_de_ref, bt_pardo, bt_amarelo, bt_negro, bt_vermelho, bt_castanhos, bt_azuis, bt_verdes, bt_pretoOLHOS, bt_outroOLHOS, bt_liso, bt_ondulado, bt_cacheado, bt_crespo, bt_careca, bt_loiro, bt_ruivo, bt_castanhoescuro, bt_castanhoclaro, bt_pretoCABELO, bt_outroCABELO, bt_alto, bt_medio, bt_baixo, bt_obeso, bt_gordo, bt_magro, bt_outroESTATURA, bt_adolescente, bt_adulto, bt_idoso, bt_bone, bt_chapeu, bt_oculos, bt_brinco, bt_corrente, bt_outroACESSORIO} = req.body;
+            let caracteristicas = await db.infob_hdm_caracteristicas.create ({  
+
+                ds_nome: ds_nome,
+                bt_branco: bt_branco,
+                bt_pardo: bt_pardo,
+                bt_amarelo: bt_amarelo,
+                bt_negro: bt_negro,
+                bt_vermelho: bt_vermelho,
+                bt_castanhos: bt_castanhos,
+                bt_azuis: bt_azuis,
+                bt_verdes: bt_verdes,
+                bt_pretoOLHOS: bt_pretoOLHOS,
+                bt_outroOLHOS: bt_outroOLHOS,
+                bt_liso: bt_liso,
+                bt_ondulado: bt_ondulado,
+                bt_cacheado: bt_cacheado,
+                bt_crespo: bt_crespo,
+                bt_careca: bt_careca,
+                bt_loiro: bt_loiro,
+                bt_ruivo: bt_ruivo,
+                bt_castanhoescuro: bt_castanhoescuro,
+                bt_castanhoclaro: bt_castanhoclaro,
+                bt_pretoCABELO: bt_pretoCABELO,
+                bt_outroCABELO: bt_outroCABELO,
+                bt_alto: bt_alto,
+                bt_medio: bt_medio,
+                bt_baixo: bt_baixo,
+                bt_obeso: bt_obeso,
+                bt_gordo: bt_gordo,
+                bt_magro: bt_magro,
+                bt_outroESTATURA: bt_outroESTATURA,
+                bt_adolescente: bt_adolescente,
+                bt_adulto: bt_adulto,
+                bt_idoso: bt_idoso,
+                bt_bone: bt_bone,
+                bt_chapeu: bt_chapeu,
+                bt_oculos: bt_oculos,
+                bt_brinco: bt_brinco,
+                bt_corrente: bt_corrente,
+                bt_outroACESSORIO: bt_outroACESSORIO,
+                nr_idade: nr_idade,
+                ds_estado: ds_estado,
+                ds_cidade: ds_cidade,
+                ds_bairro: ds_bairro,
+                ds_rua: ds_rua,
+                nr_numero: nr_numero,
+                nr_cep: nr_cep,
+                ds_complemento: ds_complemento,
+                ds_ponto_de_ref: ds_ponto_de_ref
+            });
+
+            resp.send(caracteristicas)
+        } catch (e){
+            resp.send({ erro: e.toString()});
+        }
+    });
+
+    app.get('/caracteristicas', async(req, resp) =>{
+        try{
+                let caracteristicas = await db.infob_hdm_caracteristicas.findAll()
+                resp.send(caracteristicas)
+            } catch (e){
+                resp.send(e.toString());
+            
+                }
+            });
 
 app.listen(process.env.PORT, () => console.log(`Server up at port ${process.env.PORT}`))
 

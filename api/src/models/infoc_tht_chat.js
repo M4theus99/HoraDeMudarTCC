@@ -5,10 +5,10 @@ export default class infoc_tht_chat extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_mensagem: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     nm_nome: {
       type: DataTypes.STRING(10),

@@ -5,10 +5,10 @@ export default class infod_leo_cliente extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_cliente: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     nm_cliente: {
       type: DataTypes.STRING(100),
@@ -37,17 +37,7 @@ export default class infod_leo_cliente extends Model {
   }, {
     sequelize,
     tableName: 'infod_leo_cliente',
-    timestamps: false,
-    indexes: [
-      {
-        name: "PRIMARY",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "id_cliente" },
-        ]
-      },
-    ]
+    timestamps: false
   });
   return infod_leo_cliente;
   }

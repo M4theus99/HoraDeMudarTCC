@@ -5,26 +5,18 @@ export default class infoc_tdv_favorito extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_favorito: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     id_cliente: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'infoc_tdv_cliente',
-        key: 'id_cliente'
-      }
+      allowNull: true
     },
     id_livro: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'infoc_tdv_livro',
-        key: 'id_livro'
-      }
+      allowNull: true
     }
   }, {
     sequelize,

@@ -5,10 +5,10 @@ export default class infod_ssc_adm extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_adm: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     ds_email: {
       type: DataTypes.STRING(255),

@@ -93,6 +93,7 @@ const Container = styled.div`
   padding: 1em;
   font-family: Roboto-Medium;
   font-size: 1em;
+  width: 225px;
 }
 .pele1 {
   font-family: Roboto-Medium;
@@ -128,6 +129,7 @@ const Container = styled.div`
   margin: 1em;
   font-family: Roboto-Medium;
   font-size: 1em;
+  width: 225px;
 }
 
 .cabelo1 {
@@ -169,6 +171,7 @@ const Container = styled.div`
   margin: 1em;
   font-family: Roboto-Medium;
   font-size: 1em;
+  width: 225px;
 }
 
 .estatura1 {
@@ -204,6 +207,7 @@ const Container = styled.div`
   margin: 1em;
   font-family: Roboto-Medium;
   font-size: 1em;
+  width: 225px;
 }
 
 .faixaEtaria1 {
@@ -211,6 +215,7 @@ const Container = styled.div`
   font-size: 1.2em;
   text-align: center;
   padding: 5px;
+  
 }
 
 .acessorios {
@@ -237,7 +242,7 @@ const Container = styled.div`
   font-size: 2.2em;
   color: #FFFFFF;
   text-align: center;
-  padding: 0.5em;
+  padding: 1em;
   margin-top: 6em;
 }
 
@@ -246,6 +251,7 @@ const Container = styled.div`
   margin: 2em;
   border-radius: 25px;
   padding: 1em;
+  margin-top: 5em;
 }
 
 .estado {

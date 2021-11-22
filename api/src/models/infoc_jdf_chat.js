@@ -33,24 +33,7 @@ export default class infoc_jdf_chat extends Model {
   }, {
     sequelize,
     tableName: 'infoc_jdf_chat',
-    timestamps: false,
-    indexes: [
-      {
-        name: "PRIMARY",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "id_chat" },
-        ]
-      },
-      {
-        name: "id_pedido",
-        using: "BTREE",
-        fields: [
-          { name: "id_pedido" },
-        ]
-      },
-    ]
+    timestamps: false
   });
   return infoc_jdf_chat;
   }

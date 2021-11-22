@@ -5,10 +5,10 @@ export default class infob_apn_tb_adocao extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     ID_ADOCAO: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     ID_USER: {
       type: DataTypes.INTEGER,
@@ -73,31 +73,7 @@ export default class infob_apn_tb_adocao extends Model {
   }, {
     sequelize,
     tableName: 'infob_apn_tb_adocao',
-    timestamps: false,
-    indexes: [
-      {
-        name: "PRIMARY",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "ID_ADOCAO" },
-        ]
-      },
-      {
-        name: "ID_USER",
-        using: "BTREE",
-        fields: [
-          { name: "ID_USER" },
-        ]
-      },
-      {
-        name: "ID_PET",
-        using: "BTREE",
-        fields: [
-          { name: "ID_PET" },
-        ]
-      },
-    ]
+    timestamps: false
   });
   return infob_apn_tb_adocao;
   }

@@ -25,24 +25,7 @@ export default class infoc_nws_tb_calendario extends Model {
   }, {
     sequelize,
     tableName: 'infoc_nws_tb_calendario',
-    timestamps: false,
-    indexes: [
-      {
-        name: "PRIMARY",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "id_calendario" },
-        ]
-      },
-      {
-        name: "id_evento",
-        using: "BTREE",
-        fields: [
-          { name: "id_evento" },
-        ]
-      },
-    ]
+    timestamps: false
   });
   return infoc_nws_tb_calendario;
   }

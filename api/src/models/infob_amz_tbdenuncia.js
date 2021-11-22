@@ -5,14 +5,18 @@ export default class infob_amz_tbdenuncia extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_denuncia: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+      primaryKey: true
     },
     id_usuario: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'infob_amz_tbusuario',
+        key: 'id_usuario'
+      }
     },
     ds_longitude: {
       type: DataTypes.DECIMAL(20,15),
@@ -53,24 +57,7 @@ export default class infob_amz_tbdenuncia extends Model {
   }, {
     sequelize,
     tableName: 'infob_amz_tbdenuncia',
-    timestamps: false,
-    indexes: [
-      {
-        name: "PRIMARY",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "id_denuncia" },
-        ]
-      },
-      {
-        name: "id_usuario",
-        using: "BTREE",
-        fields: [
-          { name: "id_usuario" },
-        ]
-      },
-    ]
+    timestamps: false
   });
   return infob_amz_tbdenuncia;
   }

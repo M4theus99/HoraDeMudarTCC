@@ -5,18 +5,14 @@ export default class infod_tif_comunidade extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_comunidade: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     id_usuario: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'infod_tif_usuario',
-        key: 'id_usuario'
-      }
+      allowNull: true
     },
     ds_capa: {
       type: DataTypes.STRING(1555),

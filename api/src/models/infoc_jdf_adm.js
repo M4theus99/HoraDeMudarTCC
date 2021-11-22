@@ -37,17 +37,7 @@ export default class infoc_jdf_adm extends Model {
   }, {
     sequelize,
     tableName: 'infoc_jdf_adm',
-    timestamps: false,
-    indexes: [
-      {
-        name: "PRIMARY",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "id_adm" },
-        ]
-      },
-    ]
+    timestamps: false
   });
   return infoc_jdf_adm;
   }

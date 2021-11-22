@@ -24,7 +24,7 @@ export default class infob_hdm_admin extends Model {
     },
     infob_ds_codigo: {
       type: DataTypes.STRING(100),
-      allowNull: true
+      allowNull: false
     }
   }, {
     sequelize,

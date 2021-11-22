@@ -16,8 +16,8 @@ export default class Api {
         return r.data
     }
 
-    async inserir (nome, sobrenome, celular, email, senha, confirmar ) {
-        let r = await api.post('/cadastro', {nome, sobrenome, celular, email, senha, confirmar })
+    async inserir (nome, sobrenome, celular, email, senha ) {
+        let r = await api.post('/cadastro', {nome, sobrenome, celular, email, senha })
         return r.data;
     }
 

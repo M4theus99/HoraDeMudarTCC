@@ -23,7 +23,7 @@ export default class infob_hdm_cadastro extends Model {
       allowNull: true
     },
     nr_HDM_celular: {
-      type: DataTypes.DECIMAL(10,0),
+      type: DataTypes.STRING(12),
       allowNull: true
     },
     nm_HDM_email: {
@@ -37,7 +37,12 @@ export default class infob_hdm_cadastro extends Model {
     bt_HDM_entrar: {
       type: DataTypes.BOOLEAN,
       allowNull: true
-    }
+    },
+
+     ds_codido: {
+      type: DataTypes.STRING(100),
+      allowNull: true
+     }
   }, {
     sequelize,
     tableName: 'infob_hdm_cadastro',

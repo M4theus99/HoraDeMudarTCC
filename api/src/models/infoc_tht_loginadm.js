@@ -1,22 +1,26 @@
 import _sequelize from 'sequelize';
 const { Model, Sequelize } = _sequelize;
 
-export default class infod_ecm_tb_categorias extends Model {
+export default class infoc_tht_loginadm extends Model {
   static init(sequelize, DataTypes) {
   super.init({
-    id_categoria: {
+    id_loginAdm: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    nm_categoria: {
-      type: DataTypes.STRING(255),
-      allowNull: false
+    ds_emailAdm: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    ds_senhaAdm: {
+      type: DataTypes.STRING(50),
+      allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'infod_ecm_tb_categorias',
+    tableName: 'infoc_tht_loginadm',
     timestamps: false,
     indexes: [
       {
@@ -24,11 +28,11 @@ export default class infod_ecm_tb_categorias extends Model {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "id_categoria" },
+          { name: "id_loginAdm" },
         ]
       },
     ]
   });
-  return infod_ecm_tb_categorias;
+  return infoc_tht_loginadm;
   }
 }

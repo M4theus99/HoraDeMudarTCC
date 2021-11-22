@@ -5,14 +5,18 @@ export default class infoc_nws_tb_venda extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_venda: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+      primaryKey: true
     },
     id_usuario: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'infoc_nws_tb_usuario',
+        key: 'id_usuario'
+      }
     },
     ds_situacao: {
       type: DataTypes.STRING(255),
@@ -24,7 +28,11 @@ export default class infoc_nws_tb_venda extends Model {
     },
     id_cartao: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'infoc_nws_tb_cartao',
+        key: 'id_cartao'
+      }
     },
     dt_inclusao: {
       type: DataTypes.DATE,
@@ -32,7 +40,11 @@ export default class infoc_nws_tb_venda extends Model {
     },
     id_evento: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'infoc_nws_tb_evento',
+        key: 'id_evento'
+      }
     }
   }, {
     sequelize,

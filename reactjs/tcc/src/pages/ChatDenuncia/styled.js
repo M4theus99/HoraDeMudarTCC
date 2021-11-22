@@ -313,6 +313,7 @@ const Container = styled.div`
     background-color: #B2BBC2;
     border-radius: 0px;
     width: 90%;
+    
    
 }
 

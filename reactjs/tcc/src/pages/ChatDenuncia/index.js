@@ -6,6 +6,8 @@ import LoadingBar from 'react-top-loading-bar'
 import { Container }  from "./styled";
 import { ChatTextArea, ChatButton } from './outros';
 import { useState, useRef } from 'react';
+import { confirmAlert } from 'react-confirm-alert'
+import 'react-confirm-alert/src/react-confirm-alert.css';
 // import { confirmAlert } from 'react-confirm-alert'
 // import 'react-confirm-alert/src/react-confirm-alert.css';
 // import { useHistory } from 'react-router-dom'
@@ -58,17 +60,30 @@ const enviarMensagem = async (event) => {
      await carregarMensagens();
      loading.current.complete();
 }
+
+
 const remover = async () => {
-    loading.current.continuousStart();
-    const r = await api.removerMensagemDENUN();
-    if (!validarResposta(r)) 
-        return;
-
-        toast.dark('Mensagem removida!');
-    await carregarMensagens();
-    loading.current.complete();
-}
-
+    
+    confirmAlert({
+        title: 'Apagar histórico do chat?',
+        message: `Tem certeza que deseja excluir o histórico?`, 
+        buttons:[
+            {
+                label: 'Sim',
+                onClick: async () =>{
+                const r = await api.removerMensagemDENUN();
+                if (!validarResposta(r)) 
+                return;
+                toast.dark('Mensagem removida!');
+                await carregarMensagens();
+                }
+                },
+                {
+                    label: 'Não'
+                }
+            ]
+        })
+    }
  
      return (
      <Container>
@@ -103,7 +118,7 @@ const remover = async () => {
 
 
 
-         <div class="texto">Chat de denuncia</div>
+         <div class="texto">Chat de Denúncia</div>
          </div>  
          <div class="conteudo"/>
          <div class="chat">

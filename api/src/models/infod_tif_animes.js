@@ -26,10 +26,6 @@ export default class infod_tif_animes extends Model {
       type: DataTypes.STRING(255),
       allowNull: true
     },
-    ds_estrelando: {
-      type: DataTypes.STRING(255),
-      allowNull: true
-    },
     ds_sinopse: {
       type: DataTypes.STRING(5000),
       allowNull: true

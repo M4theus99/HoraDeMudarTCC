@@ -1,4 +1,6 @@
 import { Container } from "../styled"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Api from "../../../service/api"; 
 
 const api = new Api();
@@ -8,13 +10,27 @@ const api = new Api();
 
 export default function BoxMensagem(props){
 
+
+  const validarResposta = (resp) => {
+        
+    if (!resp.erro)
+        return true;
+    alert("erro")
+
+    return false;
+}
+
     const remover = async (id) => {
     const r = await api.removerMensagem(id);
+    if (!validarResposta(r)) 
+     return;
+      toast.dark('Mensagem Removida');
 }
 
     return(
         <Container>
-
+ <ToastContainer />
+        
         <div class="depoimento3">
         <div class="usuario3">
           <div class="perfil3">

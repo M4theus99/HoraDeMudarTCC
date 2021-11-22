@@ -1,14 +1,14 @@
 import _sequelize from 'sequelize';
 const { Model, Sequelize } = _sequelize;
 
-export default class infob_mw_tbcomentarios extends Model {
+export default class infob_mw_tbcomentario extends Model {
   static init(sequelize, DataTypes) {
   super.init({
-    id_cometariio: {
-      autoIncrement: true,
+    id_cometario: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     id_filme: {
       type: DataTypes.INTEGER,
@@ -36,7 +36,7 @@ export default class infob_mw_tbcomentarios extends Model {
     }
   }, {
     sequelize,
-    tableName: 'infob_mw_tbcomentarios',
+    tableName: 'infob_mw_tbcomentario',
     timestamps: false,
     indexes: [
       {
@@ -44,7 +44,7 @@ export default class infob_mw_tbcomentarios extends Model {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "id_cometariio" },
+          { name: "id_cometario" },
         ]
       },
       {
@@ -63,6 +63,6 @@ export default class infob_mw_tbcomentarios extends Model {
       },
     ]
   });
-  return infob_mw_tbcomentarios;
+  return infob_mw_tbcomentario;
   }
 }

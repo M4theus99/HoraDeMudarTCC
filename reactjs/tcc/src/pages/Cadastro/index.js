@@ -42,7 +42,7 @@
          toast.error(`${r.erro}`)
          loading.current.complete();
        } else {
-           alert("Oioiii lindo, funfou")
+           alert("Usuario logado")
            navigation.push ('/Login');
        }
         

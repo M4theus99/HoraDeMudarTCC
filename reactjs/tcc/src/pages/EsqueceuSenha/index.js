@@ -23,7 +23,7 @@ export default function  EsqueceuSenha () {
 
   async function recuperar() {
     loading.current.continuousStart();
-    const r = await axios.post(`http://localhost:3030/esqueciASenha` , { email : email});
+    const r = await axios.post(`http://localhost:3030/EsqueceuSenha` , { email : email});
     if (r.data.status === 'ok') {
         navigation.push('/RedefinirSenha', { email: email})
 

@@ -300,7 +300,7 @@ export default class DemoComponent extends Component {
                      
                      <div class = "mapa"
                 ref={(ref) => { this.googleMapDiv = ref }}
-                style={{ height: '60vh', width: '50%', }}>
+                style={{ height: '60vh', width: '60%', }}>
             </div>
                 </div>
                 

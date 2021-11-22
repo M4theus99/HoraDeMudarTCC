@@ -71,6 +71,7 @@ const Container = styled.div`
   color: #ffffff;
   padding: 30px;
   margin-top: 1.5em;
+  text-align: center;
 }
 
 .introducao {
@@ -287,6 +288,100 @@ button {
 .meu_perfil {
   margin-left: 10em;
 }
+
+@media (max-width: 1024px){
+  
+    .faixa1{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+       
+        padding: 0px;
+        margin: 0px;
+        width: 110vh;
+    }
+
+    .introducao {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .titulo {
+      text-align: center;
+      display: flex;
+    }
+
+    .imagem1 img {
+      width: 20em;
+      height: 24em;
+      margin-top: 1em;
+    }
+
+    .cabecalho-inicio, .cabecalho-botoes, .cabecalho-img  {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        margin-top: 1em;
+        width: 100%;
+    }
+
+    .cabecalho-botoes{
+      margin-top: 0.5em;
+    }
+
+    .texto_chat {
+      width: 25em;
+      text-align: center;
+      margin-top: -1em;
+    }
+
+    .apresentacao {
+      margin-top: -5em;
+    }
+
+    .faixa2 {
+      display: flex;
+      flex-direction: column;
+      width: 110vh;
+    }
+
+    .imagem2 img {
+      width: 25em;
+      height: 24em;
+      margin-top: 1em;
+      align-items: center;
+      display: flex;
+    }
+
+    .conteudo {
+      margin-top: -8em;
+    }
+
+    .explicacao {
+      display: flex;
+      text-align: center;
+    }
+
+    .explicacao {
+      display: flex;
+      text-align: center;
+    }
+
+    .faixa3 {
+      display: flex;
+      flex-direction: column;
+      width: 110vh;
+    }
+
+
+
+      }
+
 
 `;
 

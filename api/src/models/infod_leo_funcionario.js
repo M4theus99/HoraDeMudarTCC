@@ -5,10 +5,10 @@ export default class infod_leo_funcionario extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_funcionario: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+      primaryKey: true
     },
     nm_funcionario: {
       type: DataTypes.STRING(255),
@@ -41,7 +41,17 @@ export default class infod_leo_funcionario extends Model {
   }, {
     sequelize,
     tableName: 'infod_leo_funcionario',
-    timestamps: false
+    timestamps: false,
+    indexes: [
+      {
+        name: "PRIMARY",
+        unique: true,
+        using: "BTREE",
+        fields: [
+          { name: "id_funcionario" },
+        ]
+      },
+    ]
   });
   return infod_leo_funcionario;
   }

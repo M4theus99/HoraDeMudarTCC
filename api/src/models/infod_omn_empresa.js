@@ -45,7 +45,17 @@ export default class infod_omn_empresa extends Model {
   }, {
     sequelize,
     tableName: 'infod_omn_empresa',
-    timestamps: false
+    timestamps: false,
+    indexes: [
+      {
+        name: "PRIMARY",
+        unique: true,
+        using: "BTREE",
+        fields: [
+          { name: "id_empresa" },
+        ]
+      },
+    ]
   });
   return infod_omn_empresa;
   }

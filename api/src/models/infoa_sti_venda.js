@@ -18,20 +18,12 @@ export default class infoa_sti_venda extends Model {
         key: 'id_endereco'
       }
     },
-    id_produto: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'infoa_sti_produto',
-        key: 'id_produto'
-      }
-    },
     ds_codigo: {
       type: DataTypes.STRING(255),
       allowNull: true
     },
     dt_venda: {
-      type: DataTypes.DATEONLY,
+      type: DataTypes.DATE,
       allowNull: true
     },
     ds_forma_pagamento: {
@@ -60,13 +52,6 @@ export default class infoa_sti_venda extends Model {
         using: "BTREE",
         fields: [
           { name: "id_endereco" },
-        ]
-      },
-      {
-        name: "id_produto",
-        using: "BTREE",
-        fields: [
-          { name: "id_produto" },
         ]
       },
     ]

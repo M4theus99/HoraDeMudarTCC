@@ -57,7 +57,24 @@ export default class infob_amz_tbdenuncia extends Model {
   }, {
     sequelize,
     tableName: 'infob_amz_tbdenuncia',
-    timestamps: false
+    timestamps: false,
+    indexes: [
+      {
+        name: "PRIMARY",
+        unique: true,
+        using: "BTREE",
+        fields: [
+          { name: "id_denuncia" },
+        ]
+      },
+      {
+        name: "id_usuario",
+        using: "BTREE",
+        fields: [
+          { name: "id_usuario" },
+        ]
+      },
+    ]
   });
   return infob_amz_tbdenuncia;
   }

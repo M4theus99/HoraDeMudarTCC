@@ -38,18 +38,10 @@ export default class infob_hdm_cadastro extends Model {
       type: DataTypes.BOOLEAN,
       allowNull: true
     },
-<<<<<<< HEAD
     ds_codido: {
       type: DataTypes.STRING(100),
       allowNull: true
     }
-=======
-
-     ds_codido: {
-      type: DataTypes.STRING(100),
-      allowNull: true
-     }
->>>>>>> 1a009fb9b8fd167112b4b2d22bc47edb8ddeda90
   }, {
     sequelize,
     tableName: 'infob_hdm_cadastro',

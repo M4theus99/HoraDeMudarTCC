@@ -5,10 +5,10 @@ export default class infoc_nws_tb_categoria extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_categoria: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+      primaryKey: true
     },
     ds_tema: {
       type: DataTypes.STRING(255),
@@ -17,7 +17,17 @@ export default class infoc_nws_tb_categoria extends Model {
   }, {
     sequelize,
     tableName: 'infoc_nws_tb_categoria',
-    timestamps: false
+    timestamps: false,
+    indexes: [
+      {
+        name: "PRIMARY",
+        unique: true,
+        using: "BTREE",
+        fields: [
+          { name: "id_categoria" },
+        ]
+      },
+    ]
   });
   return infoc_nws_tb_categoria;
   }

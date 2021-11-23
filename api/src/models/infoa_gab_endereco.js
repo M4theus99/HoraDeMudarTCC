@@ -41,7 +41,24 @@ export default class infoa_gab_endereco extends Model {
   }, {
     sequelize,
     tableName: 'infoa_gab_endereco',
-    timestamps: false
+    timestamps: false,
+    indexes: [
+      {
+        name: "PRIMARY",
+        unique: true,
+        using: "BTREE",
+        fields: [
+          { name: "id_endereco" },
+        ]
+      },
+      {
+        name: "id_usuario",
+        using: "BTREE",
+        fields: [
+          { name: "id_usuario" },
+        ]
+      },
+    ]
   });
   return infoa_gab_endereco;
   }

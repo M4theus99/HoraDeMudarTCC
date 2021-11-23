@@ -15,7 +15,7 @@ export default class infod_omn_vaga extends Model {
       allowNull: true
     },
     vl_salario: {
-      type: DataTypes.DECIMAL(10,5),
+      type: DataTypes.STRING(255),
       allowNull: true
     },
     id_empresa: {
@@ -65,7 +65,31 @@ export default class infod_omn_vaga extends Model {
   }, {
     sequelize,
     tableName: 'infod_omn_vaga',
-    timestamps: false
+    timestamps: false,
+    indexes: [
+      {
+        name: "PRIMARY",
+        unique: true,
+        using: "BTREE",
+        fields: [
+          { name: "id_vaga" },
+        ]
+      },
+      {
+        name: "id_empresa",
+        using: "BTREE",
+        fields: [
+          { name: "id_empresa" },
+        ]
+      },
+      {
+        name: "id_area_vaga",
+        using: "BTREE",
+        fields: [
+          { name: "id_area_vaga" },
+        ]
+      },
+    ]
   });
   return infod_omn_vaga;
   }

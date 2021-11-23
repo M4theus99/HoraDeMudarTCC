@@ -5,10 +5,10 @@ export default class infob_hdm_esqueci_senha_adm extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_HDM_esqueci_senha: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+      primaryKey: true
     },
     nr_HDM_senha_adm: {
       type: DataTypes.BOOLEAN,

@@ -5,10 +5,10 @@ export default class tb_produto extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_produto: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+      primaryKey: true
     },
     tp_peca: {
       type: DataTypes.STRING(255),

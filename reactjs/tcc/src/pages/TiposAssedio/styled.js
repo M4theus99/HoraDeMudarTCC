@@ -12,7 +12,6 @@ a{
     background-color: #9A9A9A;
     height: 100vh;
 }
-
 .cabecalho-inicio{
     display: flex;
     flex-direction: row;
@@ -34,8 +33,8 @@ a{
 .cabecalho-botoes{
     margin-top: 4em;
     margin-right: 2em;
-    
-} 
+}
+
 
 .conteudo-faixa1{
     display: flex;

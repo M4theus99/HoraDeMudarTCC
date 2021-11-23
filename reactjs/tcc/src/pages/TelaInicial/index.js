@@ -26,7 +26,7 @@ export default function TelaInicial () {
                     
                      <Link to="/Denúncia">Denúncia</Link>
                      <Link to="/TipoViolencia">Tipos de violência</Link>
-                     <Link to="/TipoAssedio ">Tipos de assédio</Link>
+                     <Link to="/TipoAssedio">Tipos de assédio</Link>
                      <Link to="/MapaDelegacias">Mapa das Delegacia</Link>
                      <Link to="/AutoEstima">Autoestima</Link>
                      <Link to="/Chat">Chat</Link>

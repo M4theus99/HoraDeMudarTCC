@@ -1,27 +1,41 @@
 import {Container} from './styled';
- import Cabecalho from '../../componentes/comum/cabecalho';
+import { Link } from 'react-router-dom';
+ 
  
  export default function Cadastro (){
    return (
      <Container>
-          <Cabecalho/>
+        
 
           <div class="faixa1">
-        <div class="cabecalho-inicio">
-          <div class="cabecalho-img">
-            <img src="../../src/images/logo-claro.png" alt="" />
-          </div>
 
-          <div class="cabecalho-botoes">
-            <a href="../index.html">Início</a>
-            <a href=" ">Denúncie</a>
-            <a href=" ">Tipos de assédio</a>
-            <a href=" ">Mapa das Delegacia</a>
-            <a href=" ">Autoestima</a>
-            <a href=" ">Chat</a>
-            <a href=" ">Cadastro</a>
-          </div>
-        </div>
+          <div class="cabecalho-inicio">
+
+<div class="cabecalho-img">
+    <Link to="/">
+    <img src="/assets/imagens/logo-claro.png" alt=""/>
+    </Link>
+</div>
+
+
+<div class="cabecalho-botoes">
+
+    
+     <Link to="/Denúncia">Denúncia</Link>
+     <Link to="/TipoViolencia">Tipos de violência</Link>
+     <Link to="/TipoAssedio">Tipos de assédio</Link>
+     <Link to="/MapaDelegacias">Mapa das Delegacia</Link>
+     <Link to="/AutoEstima">Autoestima</Link>
+     <Link to="/Chat">Chat</Link>
+     <Link to="/Cadastro">Cadastro</Link>
+     <Link to="/Login">Login</Link>
+     <Link to="/QuemSomosNos">Quem Somos Nos </Link>
+
+                                   
+</div>
+
+</div>
+
 
         <div class="conteudo-faixa1">
           <div class="faixa1-textos">
@@ -41,14 +55,14 @@ import {Container} from './styled';
           </div>
 
           <div class="faixa1-img">
-            <img class="img-tpdeviolencia" src="../../src/images/pg-rec22.png" alt="" />
+            <img class="img-tpdeviolencia" src="/assets/imagens/pg-rec22.png" alt="" />
           </div>
         </div>
       </div>
 
       <div class="faixa-2">
         <div class="img-faixa2">
-          <img class="faixa2-img" src="/assets/images/pg-gri.png" alt=""/>
+          <img class="faixa2-img" src="/assets/imagens/pg-gri.png" alt=""/>
         </div>
 
         <div class="conteudo-faixa2">
@@ -82,13 +96,13 @@ import {Container} from './styled';
         </div>
 
         <div class="faixa3-img">
-          <img class="img-faixa3" src="../../src/images/pg-agressao.png" alt="" />
+          <img class="img-faixa3" src="/assets/imagens/pg-agressao.png" alt="" />
         </div>
       </div>
 
       <div class="faixa4">
         <div class="faixa4-img">
-          <img class="img-faixa4" src="../../src/images/pg-se.png" alt=""/>
+          <img class="img-faixa4" src="/assets/imagens/pg-se.png" alt=""/>
         </div>
 
         <div class="faixa4-conteudo">
@@ -107,27 +121,7 @@ import {Container} from './styled';
         </div>
       </div>
 
-      <div class="faixa5">
-        <div class="faixa5-conteudo">
-          <div class="faixa5-texto1">
-            Assédio <br />
-            Virtual
-          </div>
-
-          <div class="faixa5-texto2">
-            Também chamado de cyberbullying, a prática ocorre com o uso de
-            tecnologias de informação e comunicação a partir de comportamentos
-            hostis e repetitivos. O comum é que a prática envolva um indivíduo
-            ou um grupo com o objetivo de prejudicar o outro.
-          </div>
-
-          <div class="faixa5">
-            <div class="faixa5-img">
-              <img class="img-faixa5" src="../../src/images/pg-assedio.png" alt="" />
-            </div>
-          </div>
-        </div>
-      </div>
+    
     
 
      </Container>

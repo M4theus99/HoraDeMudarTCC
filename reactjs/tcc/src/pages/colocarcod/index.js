@@ -16,7 +16,7 @@ import "animate.css/animate.min.css";
 export default function  EsqueceuSenha () {
 
     const [email, setEmail] = useState("");
-    const [codigo, setCodigo ] = useState("");
+    const [codigo] = useState("");
   
 
   const loading = useRef(null);

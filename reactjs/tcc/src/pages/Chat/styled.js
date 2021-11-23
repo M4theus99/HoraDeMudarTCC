@@ -321,13 +321,15 @@ button {
     }
 
     .cabecalho-inicio, .cabecalho-botoes, .cabecalho-img  {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-
-        margin-top: 1em;
-        width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      min-width: auto;
+      padding: 0px;
+      margin: 0px;
+      margin-top: 1em;
+      width: 100%;
     }
 
     .cabecalho-botoes{

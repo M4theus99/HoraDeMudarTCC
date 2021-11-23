@@ -317,17 +317,18 @@ const Container = styled.div`
    
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 400px) {
    
-    .container, .cabecalho, .texto, .menu, .conteudo, .cabecalho-botoes, .chatt{
+    .container, .cabecalho, .texto, .menu, .conteudo, .cabecalho-botoes, .chatt, .chat-message{
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
-       
+        min-width: auto;
         padding: 0px;
         margin: 0px;
         width: 100%;
+        
     }
 
     .cabecalho{
@@ -336,13 +337,13 @@ const Container = styled.div`
 
     .conteudo, .chat, .policial1, .policia2, .user1, .user2, .balao1, .balao2, .text1, .text2, .searchbox, .enviar, .local, .localimg, .mensagem, .chat-message, .chatt{
         flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-           
-            padding: 0px;
-            margin: 0px;
-            width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        min-width: auto;
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
         },
 `
 export {Container}

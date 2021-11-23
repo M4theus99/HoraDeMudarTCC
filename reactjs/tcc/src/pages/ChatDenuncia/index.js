@@ -157,7 +157,9 @@ const remover = async () => {
        <ChatTextArea name="" placeholder="Escreva..." value={mensagem} onChange={e => setMsg(e.target.value)} />
       <ChatButton onClick={enviarMensagem} className="btn-enviar">  Enviar </ChatButton>
        <ChatButton onClick={remover} className="btn-enviar">  Apagar Historico </ChatButton>
-
+       <form action="/CaracteristicasLocalizaçao" class="inline">
+    <ChatButton class="btn-enviar" >Carac. Denúncia </ChatButton>
+</form>
     
 </div> 
       

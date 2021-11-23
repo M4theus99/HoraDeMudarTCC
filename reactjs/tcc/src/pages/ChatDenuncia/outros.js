@@ -10,7 +10,7 @@ const ChatButton = styled.button`
     border: none;
     border-radius: 20px;
 
-    padding: 2em 3em;
+    padding: 1em 1em;
     margin: .3em;
 
     cursor: pointer;
@@ -41,8 +41,8 @@ const ChatTextArea = styled.textarea`
 
     cursor: text;
 
-    height: 7em;
-    width: 55em;
+    height: 5em;
+    width: 40em;
     
     margin: .5em 3em;
 `

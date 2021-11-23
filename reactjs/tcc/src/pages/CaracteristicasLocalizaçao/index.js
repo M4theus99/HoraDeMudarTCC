@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom'
 import {Container} from './styled';
 import Api from '../../service/api'
-import { useState , useEffect, useRef, ReactDOM } from 'react';
+import { useState , useRef} from 'react';
 import { toast, ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import LoadingBar from 'react-top-loading-bar';

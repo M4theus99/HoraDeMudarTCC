@@ -13,15 +13,15 @@ import LoadingBar from 'react-top-loading-bar';
 
 export default function RedefinirSenha (props) 
 {
-  const [validado, setValidado] = useState(false);
-  const [codigo, setCodigo] = useState('');
-  const [novaSenha, setNovaSenha] = useState('');
+  const [setValidado] = useState(false);
+  const [codigo] = useState('');
+  const [novaSenha] = useState('');
 
     const navigation = useHistory()
   
   async function validarCodigo(){
       const r = await axios.post(`http://localhost:3030/validarCodigo`, 
-      {email: props.location.state.email, 
+      {
        codigo: codigo})
       if  (r.data.status === 'ok') {
           setValidado(true);
@@ -33,7 +33,7 @@ export default function RedefinirSenha (props)
   
   async function alterarSenha (){
     const r = await axios.put(`http://localhost:3030/RedefinirSenha`, 
-        {email: props.location.state.email, 
+        { 
         codigo: codigo, 
         novaSenha: novaSenha})
 
@@ -94,11 +94,11 @@ export default function RedefinirSenha (props)
 
             <div class="botoes">
                 <div class="alterar">
-                  <button>Alterar</button>
+                  <button onClick = { alterarSenha }> Alterar</button>
                 </div>
 
                 <div class="cancelar">
-                  <button>Cancelar</button>
+                  <button onClick = { validarCodigo} >Cancelar</button>
                 </div>
             </div>
         </div>

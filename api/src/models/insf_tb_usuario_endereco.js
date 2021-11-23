@@ -37,7 +37,24 @@ export default class insf_tb_usuario_endereco extends Model {
   }, {
     sequelize,
     tableName: 'insf_tb_usuario_endereco',
-    timestamps: false
+    timestamps: false,
+    indexes: [
+      {
+        name: "PRIMARY",
+        unique: true,
+        using: "BTREE",
+        fields: [
+          { name: "id_usuario_endereco" },
+        ]
+      },
+      {
+        name: "id_usuario",
+        using: "BTREE",
+        fields: [
+          { name: "id_usuario" },
+        ]
+      },
+    ]
   });
   return insf_tb_usuario_endereco;
   }

@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom'
 import {Container} from './styled';
 import Api from '../../service/api'
 import { useState , useEffect, useRef, ReactDOM } from 'react';
+import { toast, ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import LoadingBar from 'react-top-loading-bar';
+
 const api = new Api();
 
 export default function Características () {
@@ -54,7 +58,7 @@ const [ ds_rua, setRua]= useState('');
 const [ nr_cep, setCep]= useState('');
 const [ ds_complemento, setComplemento]= useState('');
 const [ ds_ponto_de_ref, setPONTODEREF]= useState('');
-const load = useRef(null);
+const loading = useRef(null);
 
 const validarResposta = (resp) => {
     if (!resp.erro)
@@ -64,10 +68,41 @@ const validarResposta = (resp) => {
 }
 
 async function inserirCaracteristicas(){
-    let r = await api.inserirCaracteristicas(bt_branco, bt_pardo, bt_amarelo, bt_negro, bt_vermelho, bt_castanhos, bt_azuis, bt_verdes, bt_pretoOLHOS, bt_outroOLHOS, bt_liso, bt_ondulado, bt_cacheado, bt_crespo, bt_careca, bt_loiro, bt_ruivo, bt_castanhoescuro, bt_castanhoclaro, bt_pretoCABELO, bt_outroCABELO, bt_alto, bt_medio, bt_baixo, bt_obeso, bt_gordo, bt_magro, bt_outroESTATURA, bt_adolescente, bt_adulto, bt_idoso, bt_bone, bt_chapeu, bt_oculos, bt_brinco, bt_corrente, bt_outroACESSORIO);
+    loading.current.continuousStart();
+    let r = await api.inserirCaracteristicas(ds_nome, bt_branco, nr_idade, ds_estado, ds_cidade, ds_bairro, ds_rua, nr_numero, nr_cep, ds_complemento, ds_ponto_de_ref, bt_pardo, bt_amarelo, bt_negro, bt_vermelho, bt_castanhos, bt_azuis, bt_verdes, bt_pretoOLHOS, bt_outroOLHOS, bt_liso, bt_ondulado, bt_cacheado, bt_crespo, bt_careca, bt_loiro, bt_ruivo, bt_castanhoescuro, bt_castanhoclaro, bt_pretoCABELO, bt_outroCABELO, bt_alto, bt_medio, bt_baixo, bt_obeso, bt_gordo, bt_magro, bt_outroESTATURA, bt_adolescente, bt_adulto, bt_idoso, bt_bone, bt_chapeu, bt_oculos, bt_brinco, bt_corrente, bt_outroACESSORIO);
     
-    console.log(r)
+    if(ds_complemento === '')
+    return toast.dark("O campo complemento precisa ser preenchido!");
+
+    if(nr_cep === '')
+    return toast.dark("O campo CEP precisa ser preenchido!");
+
+    if(ds_rua === '')
+    return toast.dark("O campo rua precisa ser preenchido!");
+
+    if(ds_bairro=== '')
+    return toast.dark("O campo bairro precisa ser preenchido!");
+
+    if(ds_cidade === '')
+    return toast.dark("O campo cidade precisa ser preenchido!");
+
+    if(ds_estado === '')
+    return toast.dark("O campo estado precisa ser preenchido!");
+
+    if(ds_nome === '')
+    return toast.dark("O campo nome precisa ser preenchido!");
+
+    if(nr_idade === '')
+    return toast.dark("O campo idade precisa ser preenchido!");
+
+    if(nr_numero === '')
+    return toast.dark("O campo número precisa ser preenchido!");
     
+    if (!validarResposta(r)) 
+    
+    return;
+    toast.dark('Características da Denúncia Enviada!');
+    loading.current.complete();
 
     
 }
@@ -76,7 +111,8 @@ async function inserirCaracteristicas(){
     return (
 
         <Container>
-           
+           <ToastContainer/>
+           <LoadingBar color="red" ref={loading} />
             <div class="faixa1">
                 <div class="cabecalho-inicio">
                     <div class="cabecalho-img">
@@ -187,7 +223,7 @@ async function inserirCaracteristicas(){
                                 <label> <input type="radio" value={bt_oculos} onChange={e => setOculos(true) } /> Óculos </label>
                                 <label> <input type="radio" value={bt_brinco} onChange={e => setBrinco(true) } /> Brinco </label>
                                 <label> <input type="radio" value={bt_corrente} onChange={e => setCorrente(true) } /> Corrente </label>
-                                <label> Outro: <input type="text" value={bt_outroACESSORIO} onChange={e => setOutroESTATURA(e.target.value) }  /> </label>
+                                <label> Outro: <input type="text" value={bt_outroACESSORIO} onChange={e => setOutroACESSORIO(e.target.value) }  /> </label>
                             </div>
                         </div>
                     

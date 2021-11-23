@@ -319,7 +319,7 @@ const Container = styled.div`
 
 @media (max-width: 1024px) {
    
-    .container, .cabecalho, .texto, .menu, .conteudo, .cabecalho-botoes, .chatt{
+    .container, .cabecalho, .texto, .menu, .conteudo, .cabecalho-botoes, .chatt, .chat-message{
         flex-direction: column;
         justify-content: center;
         align-items: center;

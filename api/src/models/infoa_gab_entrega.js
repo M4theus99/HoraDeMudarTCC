@@ -45,7 +45,31 @@ export default class infoa_gab_entrega extends Model {
   }, {
     sequelize,
     tableName: 'infoa_gab_entrega',
-    timestamps: false
+    timestamps: false,
+    indexes: [
+      {
+        name: "PRIMARY",
+        unique: true,
+        using: "BTREE",
+        fields: [
+          { name: "id_entrega" },
+        ]
+      },
+      {
+        name: "id_endereco",
+        using: "BTREE",
+        fields: [
+          { name: "id_endereco" },
+        ]
+      },
+      {
+        name: "id_venda",
+        using: "BTREE",
+        fields: [
+          { name: "id_venda" },
+        ]
+      },
+    ]
   });
   return infoa_gab_entrega;
   }

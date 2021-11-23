@@ -5,10 +5,10 @@ export default class infoc_tdv_cupom extends Model {
   static init(sequelize, DataTypes) {
   super.init({
     id_cupom: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+      primaryKey: true
     },
     dt_duracao: {
       type: DataTypes.DATE,

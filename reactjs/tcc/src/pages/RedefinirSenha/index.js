@@ -65,9 +65,9 @@ export default function RedefinirSenha (props)
             <div class="cabecalho-botoes">
 
                 
-                <Link to="/Denuncie">Denúncie</Link>
+                <Link to="/Denúncia">Denúncia</Link>
                 <Link to="/TipoViolencia">Tipos de violência</Link>
-                <Link to=" ">Tipos de assédio</Link>
+                <Link to="/TiposAssedio ">Tipos de assédio</Link>
                 <Link to="/MapaDelegacias">Mapa das Delegacia</Link>
                 <Link to="/AutoEstima">Autoestima</Link>
                 <Link to="/Chat">Chat</Link>

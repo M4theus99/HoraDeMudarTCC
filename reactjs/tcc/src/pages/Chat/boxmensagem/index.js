@@ -49,16 +49,7 @@ export default function BoxMensagem(props){
           {props.info.ds_HDM_mensagem} 
         </div>
 
-      
-
-
-        <div class="reagir_msg3">
-          <div class="curtidas3">
-            <div class="coracao3">
-                <img src="/assets/imagens/pg-chat-coracao.png" alt=""/>
-            </div>
-          </div>
-        </div>
+    
       </div>
 
       </Container>

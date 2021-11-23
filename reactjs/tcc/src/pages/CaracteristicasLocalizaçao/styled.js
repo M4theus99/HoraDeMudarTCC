@@ -1,3 +1,5 @@
+
+
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -110,6 +112,7 @@ const Container = styled.div`
   margin: 1em;
   font-family: Roboto-Medium;
   font-size: 1em;
+  width: 225px;
 }
 
 .olhos1 {
@@ -147,6 +150,7 @@ const Container = styled.div`
   margin: 1em;
   font-family: Roboto-Medium;
   font-size: 1em;
+  width: 225px;
 }
 
 .corCabelo1 {
@@ -321,6 +325,30 @@ input {
   border-color: transparent;
 }
 
+@media (max-width: 1024px){
+  
+  .faixa1{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+     
+      padding: 0px;
+      margin: 0px;
+      width: 100vh;
+  }
+
+  .cabecalho-inicio, .cabecalho-botoes, .cabecalho-img  {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      margin-top: 1em;
+      width: 100%;
+  }
+
+}
 `;
 
 export {Container}  

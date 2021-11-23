@@ -11,8 +11,6 @@ import { useEffect, useState } from 'react';
 import LoadingBar from 'react-top-loading-bar';
 
 
-
-
 import Api from '../../service/api';
 const api = new Api();
 
@@ -43,8 +41,6 @@ export default function Chat () {
     
     return;
     toast.dark('Mensagem Enviada!');
-    
-  
  }
  
  
@@ -55,12 +51,9 @@ export default function Chat () {
     
      }
    
- 
     ListaMensagem();
    })
-     
-  
-
+    
     return (
   
     <Container>
@@ -136,8 +129,6 @@ export default function Chat () {
           info = {item}
           />)}
           
-          
-
           <div class="comentario">
             
           </div>
@@ -162,4 +153,3 @@ export default function Chat () {
 
     )
 } 
-

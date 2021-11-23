@@ -13,15 +13,15 @@ import LoadingBar from 'react-top-loading-bar';
 
 export default function RedefinirSenha (props) 
 {
-  const [validado, setValidado] = useState(false);
-  const [codigo, setCodigo] = useState('');
-  const [novaSenha, setNovaSenha] = useState('');
+  const [setValidado] = useState(false);
+  const [codigo] = useState('');
+  const [novaSenha] = useState('');
 
     const navigation = useHistory()
   
   async function validarCodigo(){
       const r = await axios.post(`http://localhost:3030/validarCodigo`, 
-      {email: props.location.state.email, 
+      {
        codigo: codigo})
       if  (r.data.status === 'ok') {
           setValidado(true);
@@ -33,7 +33,7 @@ export default function RedefinirSenha (props)
   
   async function alterarSenha (){
     const r = await axios.put(`http://localhost:3030/RedefinirSenha`, 
-        {email: props.location.state.email, 
+        { 
         codigo: codigo, 
         novaSenha: novaSenha})
 
@@ -65,9 +65,9 @@ export default function RedefinirSenha (props)
             <div class="cabecalho-botoes">
 
                 
-                <Link to="/Denuncie">Denúncie</Link>
+                <Link to="/Denúncia">Denúncia</Link>
                 <Link to="/TipoViolencia">Tipos de violência</Link>
-                <Link to=" ">Tipos de assédio</Link>
+                <Link to="/TiposAssedio ">Tipos de assédio</Link>
                 <Link to="/MapaDelegacias">Mapa das Delegacia</Link>
                 <Link to="/AutoEstima">Autoestima</Link>
                 <Link to="/Chat">Chat</Link>
@@ -94,11 +94,11 @@ export default function RedefinirSenha (props)
 
             <div class="botoes">
                 <div class="alterar">
-                  <button>Alterar</button>
+                  <button onClick = { alterarSenha }> Alterar</button>
                 </div>
 
                 <div class="cancelar">
-                  <button>Cancelar</button>
+                  <button onClick = { validarCodigo} >Cancelar</button>
                 </div>
             </div>
         </div>

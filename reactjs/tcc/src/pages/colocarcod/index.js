@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import axios from "axios";
 
 import { useState, useRef } from "react";
-import { useHistory } from "react-router-dom";
 
 
 import { toast, ToastContainer} from "react-toastify";
@@ -18,11 +17,11 @@ import "animate.css/animate.min.css";
 export default function RedefinirSenha (props) {
 
     const [validado, setValidado] = useState(false);
-  const [codigo, setCodigo] = useState('');
-  const [novaSenha, setNovaSenha] = useState('');
+  const [codigo] = useState('');
+  
 
   const loading = useRef(null);
-  const navigation = useHistory();
+ 
 
   async function validarCodigo(){
     const r = await axios.post(`http://localhost:3030/validarCodigo`, 

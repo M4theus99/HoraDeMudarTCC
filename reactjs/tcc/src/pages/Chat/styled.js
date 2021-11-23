@@ -64,7 +64,7 @@ const Container = styled.div`
 
 .titulo {
   width: 350px;
-  margin-left: 6.5em;
+  margin-left: 4em;
   font-family: Roboto-Medium;
   font-size: 3em;
   font-weight: 500;
@@ -160,6 +160,7 @@ const Container = styled.div`
   margin: 2em;
   margin-left: 11.5em;
   margin-right: 15em;
+
 }
 
 .mensagem1 {
@@ -186,8 +187,6 @@ const Container = styled.div`
   flex-direction: row;
   margin-left: 1em;
 }
-
-
 
 .depoimento3 {
   display: flex;
@@ -299,7 +298,7 @@ button {
        
         padding: 0px;
         margin: 0px;
-        width: 110vh;
+        width: 100vh;
     }
 
     .introducao {
@@ -321,13 +320,15 @@ button {
     }
 
     .cabecalho-inicio, .cabecalho-botoes, .cabecalho-img  {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-
-        margin-top: 1em;
-        width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      min-width: auto;
+      padding: 0px;
+      margin: 0px;
+      margin-top: 1em;
+      width: 100%;
     }
 
     .cabecalho-botoes{
@@ -347,15 +348,14 @@ button {
     .faixa2 {
       display: flex;
       flex-direction: column;
-      width: 110vh;
+     width: 100vh;
     }
 
     .imagem2 img {
       width: 25em;
       height: 24em;
       margin-top: 1em;
-      align-items: center;
-      display: flex;
+      margin-left: 15em;
     }
 
     .conteudo {
@@ -367,6 +367,11 @@ button {
       text-align: center;
     }
 
+    .compartilhe {
+      text-align: center;
+
+    }
+
     .explicacao {
       display: flex;
       text-align: center;
@@ -375,7 +380,17 @@ button {
     .faixa3 {
       display: flex;
       flex-direction: column;
-      width: 110vh;
+      width: 100vh;
+    }
+
+    .depoimento3 {
+      text-align: center;
+      display: flex;
+    }
+
+    .mensagem3 {
+      text-align: center;
+      display: flex;
     }
 
 

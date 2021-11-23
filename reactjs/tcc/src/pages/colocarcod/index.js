@@ -13,24 +13,25 @@ import LoadingBar from "react-top-loading-bar";
 
 import "animate.css/animate.min.css";
 
-export default function  EsqueceuSenha () {
 
-    const [email, setEmail] = useState("");
-    const [codigo, setCodigo ] = useState("");
-  
+
+export default function RedefinirSenha (props) {
+
+    const [validado, setValidado] = useState(false);
+  const [codigo, setCodigo] = useState('');
+  const [novaSenha, setNovaSenha] = useState('');
 
   const loading = useRef(null);
   const navigation = useHistory();
 
-  async function recuperar() {
-    loading.current.continuousStart();
-    const r = await axios.post(`http://localhost:3030/EsqueceuSenha` , { email : email, ds_codido: codigo});
-    if (r.data.status === 'ok') {
-        navigation.push('/RedefinirSenha', { email: email, ds_codido: codigo})
- console.log(r)
+  async function validarCodigo(){
+    const r = await axios.post(`http://localhost:3030/validarCodigo`, 
+    {email: props.location.state.email, 
+     codigo: codigo})
+    if  (r.data.status === 'ok') {
+        setValidado(true);
     } else {
-        toast.error('E-mail inválido');
-        loading.current.complete();
+        toast.error(r.data.mensagem);
     }
 }
     return (
@@ -79,7 +80,7 @@ export default function  EsqueceuSenha () {
                 <div class="campos">
     
                 <div class="caixa-1">
-                <input type="text" value={email} onChange={e=> setEmail(e.target.value) }  name="" placeholder="Ensira o codigo:"/>
+                <input type="text" value={validado} onChange={e=> setValidado(e.target.value) }  name="" placeholder="Ensira o codigo:"/>
                 </div>
     
              
@@ -90,7 +91,7 @@ export default function  EsqueceuSenha () {
     
     
                 <div class="botao1">
-                    <button onClick={recuperar}> Mandar Codigo</button>
+                    <button onClick={validarCodigo}> Enviar Codigo</button>
               </div>
 
               <Link to="/">
